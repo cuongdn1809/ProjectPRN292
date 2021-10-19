@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ProjectPRN292
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -22,5 +22,7 @@ namespace ProjectPRN292
             int b;
             int c;
         }
+
+        
     }
 }
