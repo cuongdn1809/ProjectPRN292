@@ -20,5 +20,10 @@ namespace ProjectPRN292
         {
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            int a;
+        }
     }
 }
