@@ -185,9 +185,9 @@ namespace ProjectPRN292
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(31, 202);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Sản phẩm";
+            this.label7.Text = "Sản Phẩm";
             // 
             // label8
             // 

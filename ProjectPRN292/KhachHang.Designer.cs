@@ -40,68 +40,75 @@ namespace ProjectPRN292
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(315, 313);
+            this.btnDelete.Location = new System.Drawing.Point(591, 183);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(112, 47);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(199, 313);
+            this.btnEdit.Location = new System.Drawing.Point(591, 262);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(112, 41);
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = " Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(86, 313);
+            this.btnAdd.Location = new System.Drawing.Point(591, 30);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(112, 47);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // txtSdt
             // 
-            this.txtSdt.Location = new System.Drawing.Point(227, 248);
+            this.txtSdt.Location = new System.Drawing.Point(162, 211);
             this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(162, 22);
+            this.txtSdt.Size = new System.Drawing.Size(215, 22);
             this.txtSdt.TabIndex = 18;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(227, 192);
+            this.txtDiaChi.Location = new System.Drawing.Point(162, 150);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(162, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(215, 22);
             this.txtDiaChi.TabIndex = 17;
             // 
             // txtTenKhach
             // 
-            this.txtTenKhach.Location = new System.Drawing.Point(227, 129);
+            this.txtTenKhach.Location = new System.Drawing.Point(162, 90);
             this.txtTenKhach.Name = "txtTenKhach";
-            this.txtTenKhach.Size = new System.Drawing.Size(162, 22);
+            this.txtTenKhach.Size = new System.Drawing.Size(215, 22);
             this.txtTenKhach.TabIndex = 16;
             // 
             // txtIdKhach
             // 
-            this.txtIdKhach.Location = new System.Drawing.Point(227, 66);
+            this.txtIdKhach.Location = new System.Drawing.Point(162, 32);
             this.txtIdKhach.Name = "txtIdKhach";
             this.txtIdKhach.ReadOnly = true;
-            this.txtIdKhach.Size = new System.Drawing.Size(162, 22);
+            this.txtIdKhach.Size = new System.Drawing.Size(215, 22);
             this.txtIdKhach.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(75, 248);
+            this.label4.Location = new System.Drawing.Point(6, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 17);
             this.label4.TabIndex = 14;
@@ -110,7 +117,7 @@ namespace ProjectPRN292
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 192);
+            this.label3.Location = new System.Drawing.Point(6, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 13;
@@ -119,7 +126,7 @@ namespace ProjectPRN292
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 129);
+            this.label2.Location = new System.Drawing.Point(6, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 12;
@@ -128,30 +135,81 @@ namespace ProjectPRN292
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 66);
+            this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = " ID khách hàng";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtIdKhach);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtTenKhach);
+            this.groupBox1.Controls.Add(this.txtSdt);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Location = new System.Drawing.Point(24, 30);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(525, 273);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(591, 105);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(112, 47);
+            this.btnUpdate.TabIndex = 23;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(24, 380);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(679, 238);
+            this.dataGridView1.TabIndex = 24;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(24, 327);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(224, 22);
+            this.txtSearch.TabIndex = 25;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(288, 321);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 34);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 419);
+            this.ClientSize = new System.Drawing.Size(730, 642);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtSdt);
-            this.Controls.Add(this.txtDiaChi);
-            this.Controls.Add(this.txtTenKhach);
-            this.Controls.Add(this.txtIdKhach);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "KhachHang";
             this.Text = "KhachHang";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +228,10 @@ namespace ProjectPRN292
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
