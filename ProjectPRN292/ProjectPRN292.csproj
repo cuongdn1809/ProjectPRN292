@@ -50,11 +50,14 @@
     <Compile Include="BillDetail.Designer.cs">
       <DependentUpon>BillDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Homepage.cs">
+    <Compile Include="DAL\Database.cs" />
+    <Compile Include="DAL\LoginDAL.cs" />
+    <Compile Include="Entity\LoginList.cs" />
+    <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Homepage.designer.cs">
-      <DependentUpon>Homepage.cs</DependentUpon>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHang.cs">
       <SubType>Form</SubType>
@@ -79,8 +82,8 @@
     <EmbeddedResource Include="BillDetail.resx">
       <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
-      <DependentUpon>Homepage.cs</DependentUpon>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
@@ -111,9 +114,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\" />
-    <Folder Include="Entity\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
