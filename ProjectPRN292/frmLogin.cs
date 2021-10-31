@@ -37,8 +37,9 @@ namespace ProjectPRN292
                     if (table.Rows.Count > 0)
                     {
                         h.ShowDialog();
-                        this.Close();
+                        Visible = false;
                     }
+                    
 
                 }
                 else

@@ -40,13 +40,13 @@ namespace ProjectPRN292
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mtxtSdt = new System.Windows.Forms.MaskedTextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.mtxtSdt = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -57,6 +57,7 @@ namespace ProjectPRN292
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -66,6 +67,7 @@ namespace ProjectPRN292
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = " Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -75,6 +77,7 @@ namespace ProjectPRN292
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtDiaChi
             // 
@@ -150,6 +153,13 @@ namespace ProjectPRN292
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
+            // mtxtSdt
+            // 
+            this.mtxtSdt.Location = new System.Drawing.Point(162, 205);
+            this.mtxtSdt.Name = "mtxtSdt";
+            this.mtxtSdt.Size = new System.Drawing.Size(283, 22);
+            this.mtxtSdt.TabIndex = 18;
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(591, 105);
@@ -158,16 +168,18 @@ namespace ProjectPRN292
             this.btnUpdate.TabIndex = 23;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // dataGridView1
+            // dgvKhachHang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 380);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(679, 238);
-            this.dataGridView1.TabIndex = 24;
+            this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachHang.Location = new System.Drawing.Point(24, 380);
+            this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.RowHeadersWidth = 51;
+            this.dgvKhachHang.RowTemplate.Height = 24;
+            this.dgvKhachHang.Size = new System.Drawing.Size(679, 238);
+            this.dgvKhachHang.TabIndex = 24;
             // 
             // txtSearch
             // 
@@ -184,13 +196,7 @@ namespace ProjectPRN292
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // mtxtSdt
-            // 
-            this.mtxtSdt.Location = new System.Drawing.Point(162, 205);
-            this.mtxtSdt.Name = "mtxtSdt";
-            this.mtxtSdt.Size = new System.Drawing.Size(283, 22);
-            this.mtxtSdt.TabIndex = 18;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // frmKhachHang
             // 
@@ -199,7 +205,7 @@ namespace ProjectPRN292
             this.ClientSize = new System.Drawing.Size(730, 642);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDelete);
@@ -210,7 +216,7 @@ namespace ProjectPRN292
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +236,7 @@ namespace ProjectPRN292
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.MaskedTextBox mtxtSdt;

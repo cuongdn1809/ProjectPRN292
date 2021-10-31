@@ -88,6 +88,7 @@ namespace ProjectPRN292
             this.btnKhachHang.TabIndex = 10;
             this.btnKhachHang.Text = "Khách Hàng";
             this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // label1
             // 
@@ -112,7 +113,7 @@ namespace ProjectPRN292
             this.dataGridView1.Size = new System.Drawing.Size(650, 506);
             this.dataGridView1.TabIndex = 8;
             // 
-            // Home
+            // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -124,7 +125,7 @@ namespace ProjectPRN292
             this.Controls.Add(this.btnKhachHang);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Home";
+            this.Name = "frmHome";
             this.Text = "Home";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

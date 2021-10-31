@@ -15,5 +15,12 @@ namespace ProjectPRN292
         {
             InitializeComponent();
         }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHang kh = new frmKhachHang();
+            kh.ShowDialog();
+            Visible = false;
+        }
     }
 }
