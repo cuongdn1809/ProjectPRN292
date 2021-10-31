@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace ProjectPRN292
 {
-    public partial class BillDetail : Form
+    public partial class frmKhachHang : Form
     {
-        public BillDetail()
+        public frmKhachHang()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int a;
         }
     }
 }

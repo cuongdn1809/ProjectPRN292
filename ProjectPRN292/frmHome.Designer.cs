@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPRN292
 {
-    partial class Home
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.

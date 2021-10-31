@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPRN292
 {
-    partial class BillDetail
+    partial class frmBillDetail
     {
         /// <summary>
         /// Required designer variable.

@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace ProjectPRN292
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace ProjectPRN292
                 if (LoginList.checkAccount(txtUsername.Text.Trim(), txtPassword.Text.Trim()).Count > 0)
                 {
                     DataTable table = LoginDAL.checkAccount(txtUsername.Text, txtPassword.Text);
-                    Home h = new Home();
+                    frmHome h = new frmHome();
                     if (table.Rows.Count > 0)
                     {
                         h.ShowDialog();

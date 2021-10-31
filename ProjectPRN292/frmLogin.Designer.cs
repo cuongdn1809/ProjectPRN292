@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPRN292
 {
-    partial class Login
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.

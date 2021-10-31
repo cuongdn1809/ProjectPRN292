@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ProjectPRN292
 {
-    public partial class Home : Form
+    public partial class frmHome : Form
     {
-        public Home()
+        public frmHome()
         {
             InitializeComponent();
         }

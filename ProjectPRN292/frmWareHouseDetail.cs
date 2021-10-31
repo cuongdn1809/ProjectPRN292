@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ProjectPRN292
 {
-    public partial class WareHouseDetail : Form
+    public partial class frmWareHouseDetail : Form
     {
-        public WareHouseDetail()
+        public frmWareHouseDetail()
         {
             InitializeComponent();
         }

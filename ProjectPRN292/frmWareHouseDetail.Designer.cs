@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPRN292
 {
-    partial class WareHouseDetail
+    partial class frmWareHouseDetail
     {
         /// <summary>
         /// Required designer variable.

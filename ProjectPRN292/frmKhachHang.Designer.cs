@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPRN292
 {
-    partial class KhachHang
+    partial class frmKhachHang
     {
         /// <summary>
         /// Required designer variable.
