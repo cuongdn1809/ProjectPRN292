@@ -32,7 +32,6 @@ namespace ProjectPRN292
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTenKhach = new System.Windows.Forms.TextBox();
             this.txtIdKhach = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@ namespace ProjectPRN292
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.mtxtSdt = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -76,25 +76,18 @@ namespace ProjectPRN292
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // txtSdt
-            // 
-            this.txtSdt.Location = new System.Drawing.Point(162, 211);
-            this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(215, 22);
-            this.txtSdt.TabIndex = 18;
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(162, 150);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(215, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(283, 22);
             this.txtDiaChi.TabIndex = 17;
             // 
             // txtTenKhach
             // 
             this.txtTenKhach.Location = new System.Drawing.Point(162, 90);
             this.txtTenKhach.Name = "txtTenKhach";
-            this.txtTenKhach.Size = new System.Drawing.Size(215, 22);
+            this.txtTenKhach.Size = new System.Drawing.Size(283, 22);
             this.txtTenKhach.TabIndex = 16;
             // 
             // txtIdKhach
@@ -102,7 +95,7 @@ namespace ProjectPRN292
             this.txtIdKhach.Location = new System.Drawing.Point(162, 32);
             this.txtIdKhach.Name = "txtIdKhach";
             this.txtIdKhach.ReadOnly = true;
-            this.txtIdKhach.Size = new System.Drawing.Size(215, 22);
+            this.txtIdKhach.Size = new System.Drawing.Size(283, 22);
             this.txtIdKhach.TabIndex = 15;
             // 
             // label4
@@ -143,11 +136,11 @@ namespace ProjectPRN292
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mtxtSdt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtIdKhach);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtTenKhach);
-            this.groupBox1.Controls.Add(this.txtSdt);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtDiaChi);
@@ -192,7 +185,14 @@ namespace ProjectPRN292
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // KhachHang
+            // mtxtSdt
+            // 
+            this.mtxtSdt.Location = new System.Drawing.Point(162, 205);
+            this.mtxtSdt.Name = "mtxtSdt";
+            this.mtxtSdt.Size = new System.Drawing.Size(283, 22);
+            this.mtxtSdt.TabIndex = 18;
+            // 
+            // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,8 +205,9 @@ namespace ProjectPRN292
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Name = "KhachHang";
+            this.Name = "frmKhachHang";
             this.Text = "KhachHang";
+            this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -220,7 +221,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTenKhach;
         private System.Windows.Forms.TextBox txtIdKhach;
@@ -233,5 +233,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.MaskedTextBox mtxtSdt;
     }
 }
