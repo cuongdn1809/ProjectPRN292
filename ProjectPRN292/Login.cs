@@ -48,7 +48,11 @@ namespace ProjectPRN292
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            int a;
+            DialogResult result = MessageBox.Show("Are you really want to exit?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)
