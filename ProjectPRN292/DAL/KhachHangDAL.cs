@@ -167,6 +167,7 @@ namespace ProjectPRN292.DAL
                 string diachi = dr["DiaChi"].ToString();
                 string sdt = dr["Sdt"].ToString();
                 KhachHang kh = new KhachHang(khachhangid, Name, diachi, sdt);
+
                 khachhang.Add(kh);
             }
             return khachhang;
