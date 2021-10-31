@@ -113,7 +113,7 @@ namespace ProjectPRN292
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 38);
             this.button1.TabIndex = 33;
-            this.button1.Text = "Exit";
+            this.button1.Text = "Hủy";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // dtpNgayXuatHang
@@ -188,7 +188,7 @@ namespace ProjectPRN292
             this.label1.TabIndex = 25;
             this.label1.Text = "Mã Hóa Đơn";
             // 
-            // BillDetail
+            // frmBillDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -210,7 +210,7 @@ namespace ProjectPRN292
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "BillDetail";
+            this.Name = "frmBillDetail";
             this.Text = "BillDetail";
             this.ResumeLayout(false);
             this.PerformLayout();

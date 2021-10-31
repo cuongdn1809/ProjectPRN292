@@ -54,7 +54,7 @@
     <Compile Include="DAL\KhachHangDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="Entity\KhachHang.cs" />
-    <Compile Include="Entity\LoginList.cs" />
+    <Compile Include="Entity\QuanLy.cs" />
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +116,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

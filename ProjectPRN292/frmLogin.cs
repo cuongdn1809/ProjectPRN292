@@ -30,7 +30,7 @@ namespace ProjectPRN292
 
             else
             {
-                if (LoginList.checkAccount(txtUsername.Text.Trim(), txtPassword.Text.Trim()).Count > 0)
+                if (LoginDAL.IsAccountValid(txtUsername.Text.Trim(), txtPassword.Text.Trim()).Count > 0)
                 {
                     DataTable table = LoginDAL.checkAccount(txtUsername.Text, txtPassword.Text);
                     frmHome h = new frmHome();
