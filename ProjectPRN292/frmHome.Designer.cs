@@ -58,6 +58,7 @@ namespace ProjectPRN292
             this.btnHoaDon.TabIndex = 13;
             this.btnHoaDon.Text = "Hóa Đơn";
             this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnXuatKho
             // 
@@ -78,6 +79,7 @@ namespace ProjectPRN292
             this.btnNhapKho.TabIndex = 11;
             this.btnNhapKho.Text = "Nhập Kho";
             this.btnNhapKho.UseVisualStyleBackColor = true;
+            this.btnNhapKho.Click += new System.EventHandler(this.btnNhapKho_Click);
             // 
             // btnKhachHang
             // 
@@ -112,6 +114,7 @@ namespace ProjectPRN292
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(650, 506);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // frmHome
             // 
@@ -126,6 +129,7 @@ namespace ProjectPRN292
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

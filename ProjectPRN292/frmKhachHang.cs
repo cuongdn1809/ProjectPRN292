@@ -132,9 +132,8 @@ namespace ProjectPRN292
             if (result == DialogResult.OK)
             {
                 frmHome h = new frmHome();
-                h.ShowDialog();
                 Visible = false;
-
+                h.ShowDialog();
             }
             
         }

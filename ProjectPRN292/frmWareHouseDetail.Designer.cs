@@ -30,12 +30,12 @@ namespace ProjectPRN292
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nSoLuong = new System.Windows.Forms.NumericUpDown();
             this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtIDSanPham = new System.Windows.Forms.TextBox();
+            this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
-            this.txtIDCungCap = new System.Windows.Forms.TextBox();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@ namespace ProjectPRN292
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,15 +55,16 @@ namespace ProjectPRN292
             this.label1.TabIndex = 36;
             this.label1.Text = "Gia Thue Theo Ngay: 10.000";
             // 
-            // numericUpDown1
+            // nSoLuong
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(232, 244);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(280, 22);
-            this.numericUpDown1.TabIndex = 35;
+            this.nSoLuong.Location = new System.Drawing.Point(232, 244);
+            this.nSoLuong.Name = "nSoLuong";
+            this.nSoLuong.Size = new System.Drawing.Size(280, 22);
+            this.nSoLuong.TabIndex = 35;
             // 
             // dtpNgayNhap
             // 
+            this.dtpNgayNhap.CustomFormat = "";
             this.dtpNgayNhap.Location = new System.Drawing.Point(232, 138);
             this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
@@ -80,13 +81,13 @@ namespace ProjectPRN292
             this.label9.TabIndex = 33;
             this.label9.Text = "Ten San Pham";
             // 
-            // txtIDSanPham
+            // txtTenSanPham
             // 
-            this.txtIDSanPham.Location = new System.Drawing.Point(232, 191);
-            this.txtIDSanPham.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIDSanPham.Name = "txtIDSanPham";
-            this.txtIDSanPham.Size = new System.Drawing.Size(280, 22);
-            this.txtIDSanPham.TabIndex = 32;
+            this.txtTenSanPham.Location = new System.Drawing.Point(232, 191);
+            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.Size = new System.Drawing.Size(280, 22);
+            this.txtTenSanPham.TabIndex = 32;
             // 
             // txtNote
             // 
@@ -96,13 +97,13 @@ namespace ProjectPRN292
             this.txtNote.Size = new System.Drawing.Size(280, 22);
             this.txtNote.TabIndex = 31;
             // 
-            // txtIDCungCap
+            // txtTenKhachHang
             // 
-            this.txtIDCungCap.Location = new System.Drawing.Point(232, 93);
-            this.txtIDCungCap.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIDCungCap.Name = "txtIDCungCap";
-            this.txtIDCungCap.Size = new System.Drawing.Size(280, 22);
-            this.txtIDCungCap.TabIndex = 30;
+            this.txtTenKhachHang.Location = new System.Drawing.Point(232, 93);
+            this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Size = new System.Drawing.Size(280, 22);
+            this.txtTenKhachHang.TabIndex = 30;
             // 
             // label7
             // 
@@ -153,6 +154,7 @@ namespace ProjectPRN292
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -163,41 +165,43 @@ namespace ProjectPRN292
             this.btnSave.TabIndex = 24;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(107, 27);
+            this.label5.Location = new System.Drawing.Point(194, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(281, 31);
+            this.label5.Size = new System.Drawing.Size(168, 31);
             this.label5.TabIndex = 37;
-            this.label5.Text = "Thông Tin Kho Hàng";
+            this.label5.Text = " Nhập Hàng";
             // 
-            // WareHouseDetail
+            // frmWareHouseDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 487);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nSoLuong);
             this.Controls.Add(this.dtpNgayNhap);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtIDSanPham);
+            this.Controls.Add(this.txtTenSanPham);
             this.Controls.Add(this.txtNote);
-            this.Controls.Add(this.txtIDCungCap);
+            this.Controls.Add(this.txtTenKhachHang);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "WareHouseDetail";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmWareHouseDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WareHouseDetail";
             this.Load += new System.EventHandler(this.WareHouseDetail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nSoLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,12 +210,12 @@ namespace ProjectPRN292
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nSoLuong;
         private System.Windows.Forms.DateTimePicker dtpNgayNhap;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtIDSanPham;
+        private System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.TextBox txtIDCungCap;
+        private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

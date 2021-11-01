@@ -49,5 +49,16 @@ namespace ProjectPRN292.DAL
             cmd.Connection.Close();
             return result;
         }
+
+        public static DataTable ExecuteQuery(string sql)
+        {
+            SqlCommand command = new SqlCommand(sql, getConnection());
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            //SqlDataReader reader = command.ExecuteReader();
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            return ds.Tables[0];
+        }
     }
 }
