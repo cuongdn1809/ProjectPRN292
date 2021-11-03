@@ -125,7 +125,7 @@ namespace ProjectPRN292
 
         public Boolean InsertDonNhap()
         {
-            //bac
+            //bac edit
             LoginDAL login = new LoginDAL();
             string format = "dd/MM/yyyy";
             string NgayNhapHang = dtpNgayNhap.Value.ToString(format);
