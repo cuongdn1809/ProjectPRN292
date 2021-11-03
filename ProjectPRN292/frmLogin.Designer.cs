@@ -81,6 +81,7 @@ namespace ProjectPRN292
             // 
             this.txtPassword.Location = new System.Drawing.Point(176, 184);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(288, 22);
             this.txtPassword.TabIndex = 4;
             // 
