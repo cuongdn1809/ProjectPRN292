@@ -43,6 +43,7 @@ namespace ProjectPRN292
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label9
@@ -106,7 +107,7 @@ namespace ProjectPRN292
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(210, 436);
+            this.btnHuy.Location = new System.Drawing.Point(285, 436);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(110, 38);
@@ -133,6 +134,7 @@ namespace ProjectPRN292
             // 
             // txtMaHoaDon
             // 
+            this.txtMaHoaDon.Enabled = false;
             this.txtMaHoaDon.Location = new System.Drawing.Point(191, 78);
             this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
@@ -170,11 +172,22 @@ namespace ProjectPRN292
             this.label1.TabIndex = 25;
             this.label1.Text = "Mã Hóa Đơn";
             // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(126, 436);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(110, 38);
+            this.btnConfirm.TabIndex = 40;
+            this.btnConfirm.Text = "Xác Nhận";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // frmBillDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 511);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpNgayNhapHang);
             this.Controls.Add(this.txtSanPham);
@@ -213,5 +226,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }

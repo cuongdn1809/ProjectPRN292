@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\DonNhapDAL.cs" />
     <Compile Include="DAL\HoaDonDAL.cs" />
     <Compile Include="Entity\DonNhap.cs" />
     <Compile Include="Entity\HoaDon.cs" />

@@ -1,4 +1,5 @@
-﻿using ProjectPRN292.Entity;
+﻿using ProjectPRN292.DAL;
+using ProjectPRN292.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,34 +81,7 @@ namespace ProjectPRN292
             }
             return SanPhamID;
         }
-        public int InsertDonNhap()
-        {
-            DonNhap donNhap = new DonNhap();
-            int n = 0;
-            string sql = "INSERT INTO [dbo].[NhapHang]([NgayNhapHang],[KhachHangID],[SoLuong],[Note],[SanPhamID],[QuanLyID]) " +
-                                            "VALUES(@ngayNhapHang, @KhachHangID, @soLuong, @note, @SanPhamID, @QuanLyID)";
-            command = new SqlCommand(sql, GetConnection());
-            command.Parameters.AddWithValue("@ngayNhapHang", donNhap.ngayNhapHang);
-            command.Parameters.AddWithValue("@KhachHangID", donNhap.KhachHangID);
-            command.Parameters.AddWithValue("@soLuong", donNhap.soLuong);
-            command.Parameters.AddWithValue("@note", donNhap.note);
-            command.Parameters.AddWithValue("@SanPhamID", donNhap.SanPhamID);
-            command.Parameters.AddWithValue("@QuanLyID", donNhap.QuanLyID);
-            try
-            {
-                connection.Open();
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return n;
-        }
+        
         public frmWareHouseDetail()
         {
             InitializeComponent();
@@ -133,16 +107,7 @@ namespace ProjectPRN292
         {
             try
             {
-                var donNhap = new DonNhap()
-                {
-                    ngayNhapHang = dtpNgayNhap.Value,
-                    KhachHangID = getIDKhachHang(txtTenKhachHang.Text),
-                    soLuong = Int32.Parse(nSoLuong.Value.ToString()),
-                    note = txtNote.Text,
-                    SanPhamID = getIDSanPham(txtTenSanPham.Text),
-                    QuanLyID = 1
-                };
-                if (InsertDonNhap() != 0)
+                if (InsertDonNhap())
                 {
                     MessageBox.Show("Add successful!");
                 }
@@ -150,11 +115,54 @@ namespace ProjectPRN292
                 {
                     MessageBox.Show("Add fail!");
                 }
+                /*MessageBox.Show(donNhap.NgayNhapHang);*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+        }
+
+        public Boolean InsertDonNhap()
+        {
+            LoginDAL login = new LoginDAL();
+            string format = "dd/MM/yyyy";
+            string NgayNhapHang = dtpNgayNhap.Value.ToString(format);
+            int KhachHangID = getIDKhachHang(txtTenKhachHang.Text);
+            int SoLuong = Int32.Parse(nSoLuong.Value.ToString());
+            string Note = txtNote.Text;
+            int SanPhamID = getIDSanPham(txtTenSanPham.Text);
+            int QuanLyID = login.getIDQuanLy();
+
+            string sql = "INSERT INTO [dbo].[NhapHang]([NgayNhapHang],[KhachHangID],[SoLuong],[Note],[SanPhamID],[QuanLyID]) " +
+                                            "VALUES(@ngayNhapHang, @KhachHangID, @soLuong, @note, @SanPhamID, @QuanLyID)";
+            command = new SqlCommand(sql, GetConnection());
+            SqlParameter param1 = new SqlParameter("@ngayNhapHang", SqlDbType.VarChar);
+            param1.Value = NgayNhapHang;
+            SqlParameter param2 = new SqlParameter("@KhachHangID", SqlDbType.Int);
+            param2.Value = KhachHangID;
+            SqlParameter param3 = new SqlParameter("@soLuong", SqlDbType.Int);
+            param3.Value = SoLuong;
+            SqlParameter param4 = new SqlParameter("@note", SqlDbType.VarChar);
+            param4.Value = Note;
+            SqlParameter param5 = new SqlParameter("@SanPhamID", SqlDbType.Int);
+            param5.Value = SanPhamID;
+            SqlParameter param6 = new SqlParameter("@QuanLyID", SqlDbType.Int);
+            param6.Value = QuanLyID;
+            try
+            {
+                connection.Open();
+                return Database.ExecuteNonQuery(sql, param1, param2, param3, param4, param5, param6) > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return false;
         }
     }
 }

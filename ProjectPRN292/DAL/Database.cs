@@ -60,5 +60,15 @@ namespace ProjectPRN292.DAL
             adapter.Fill(ds);
             return ds.Tables[0];
         }
+
+        public static int ExecuteNonQuery(string sql, params SqlParameter[] parameters)
+        {
+            SqlCommand command = new SqlCommand(sql, getConnection());
+            command.Parameters.AddRange(parameters);
+            command.Connection.Open();
+            int count = command.ExecuteNonQuery();
+            command.Connection.Close();
+            return count;
+        }
     }
 }

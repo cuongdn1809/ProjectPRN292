@@ -7,43 +7,45 @@ namespace ProjectPRN292.Entity
 {
     public class DonNhap
     {
-        private int nhapHangId1;
-        private DateTime ngayNhapHang1;
+        private int nhapHangId;
+        private string ngayNhapHang;
         private int khachHangID;
-        private int soLuong1;
-        private string note1;
+        private int soLuong;
+        private string note;
         private int sanPhamID;
         private int quanLyID;
 
-        public int nhapHangId { get => nhapHangId1; set => nhapHangId1 = value; }
-        public DateTime ngayNhapHang { get => ngayNhapHang1; set => ngayNhapHang1 = value; }
-        public int KhachHangID { get => khachHangID; set => khachHangID = value; }
-        public int soLuong { get => soLuong1; set => soLuong1 = value; }
-        public string note { get => note1; set => note1 = value; }
-        public int SanPhamID { get => sanPhamID; set => sanPhamID = value; }
-        public int QuanLyID { get => quanLyID; set => quanLyID = value; }
-
-        public DonNhap() { }
-
-        public DonNhap(DateTime ngayNhapHang, int khachHangID, int soLuong, string note, int sanPhamID, int quanLyID)
+        public DonNhap()
         {
-            this.ngayNhapHang = ngayNhapHang;
-            KhachHangID = khachHangID;
-            this.soLuong = soLuong;
-            this.note = note;
-            SanPhamID = sanPhamID;
-            QuanLyID = quanLyID;
         }
 
-        public DonNhap(int nhapHangId, DateTime ngayNhapHang, int khachHangID, int soLuong, string note, int sanPhamID, int quanLyID)
+        public DonNhap(int nhapHangId, string ngayNhapHang, int khachHangID, int soLuong, string note, int sanPhamID, int quanLyID)
         {
             this.nhapHangId = nhapHangId;
             this.ngayNhapHang = ngayNhapHang;
-            KhachHangID = khachHangID;
+            this.khachHangID = khachHangID;
             this.soLuong = soLuong;
             this.note = note;
-            SanPhamID = sanPhamID;
-            QuanLyID = quanLyID;
+            this.sanPhamID = sanPhamID;
+            this.quanLyID = quanLyID;
         }
+
+        public DonNhap(string ngayNhapHang, int khachHangID, int soLuong, string note, int sanPhamID, int quanLyID)
+        {
+            this.ngayNhapHang = ngayNhapHang;
+            this.khachHangID = khachHangID;
+            this.soLuong = soLuong;
+            this.note = note;
+            this.sanPhamID = sanPhamID;
+            this.quanLyID = quanLyID;
+        }
+
+        public int NhapHangId { get => nhapHangId; set => nhapHangId = value; }
+        public string NgayNhapHang { get => ngayNhapHang; set => ngayNhapHang = value; }
+        public int KhachHangID { get => khachHangID; set => khachHangID = value; }
+        public int SoLuong { get => soLuong; set => soLuong = value; }
+        public string Note { get => note; set => note = value; }
+        public int SanPhamID { get => sanPhamID; set => sanPhamID = value; }
+        public int QuanLyID { get => quanLyID; set => quanLyID = value; }
     }
 }

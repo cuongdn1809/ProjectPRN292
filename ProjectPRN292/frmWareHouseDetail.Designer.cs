@@ -64,12 +64,16 @@ namespace ProjectPRN292
             // 
             // dtpNgayNhap
             // 
-            this.dtpNgayNhap.CustomFormat = "";
+            this.dtpNgayNhap.CustomFormat = "yyyy-MM-dd";
+            this.dtpNgayNhap.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayNhap.Location = new System.Drawing.Point(232, 138);
             this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
+            this.dtpNgayNhap.RightToLeftLayout = true;
             this.dtpNgayNhap.Size = new System.Drawing.Size(280, 22);
             this.dtpNgayNhap.TabIndex = 34;
+            this.dtpNgayNhap.Value = new System.DateTime(2021, 10, 13, 0, 0, 0, 0);
             // 
             // label9
             // 
