@@ -36,8 +36,9 @@ namespace ProjectPRN292
                     frmHome h = new frmHome();
                     if (table.Rows.Count > 0)
                     {
-                        h.ShowDialog();
                         Visible = false;
+                        h.ShowDialog();
+                        
                     }
                     
 
