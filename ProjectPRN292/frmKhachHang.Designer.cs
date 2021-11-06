@@ -29,7 +29,6 @@ namespace ProjectPRN292
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -45,37 +44,30 @@ namespace ProjectPRN292
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(591, 183);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(112, 47);
-            this.btnDelete.TabIndex = 21;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(591, 262);
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(573, 183);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(112, 41);
+            this.btnEdit.Size = new System.Drawing.Size(145, 41);
             this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = " Exit";
+            this.btnEdit.Text = "Thoát";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(591, 30);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(573, 30);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(112, 47);
+            this.btnAdd.Size = new System.Drawing.Size(145, 47);
             this.btnAdd.TabIndex = 19;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -162,11 +154,12 @@ namespace ProjectPRN292
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(591, 105);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(573, 105);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(112, 47);
+            this.btnUpdate.Size = new System.Drawing.Size(145, 47);
             this.btnUpdate.TabIndex = 23;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Chỉnh sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -174,7 +167,7 @@ namespace ProjectPRN292
             // 
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachHang.Location = new System.Drawing.Point(24, 380);
+            this.dgvKhachHang.Location = new System.Drawing.Point(24, 397);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
@@ -183,14 +176,14 @@ namespace ProjectPRN292
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(24, 327);
+            this.txtSearch.Location = new System.Drawing.Point(24, 355);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(224, 22);
             this.txtSearch.TabIndex = 25;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(288, 321);
+            this.btnSearch.Location = new System.Drawing.Point(284, 349);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(86, 34);
             this.btnSearch.TabIndex = 26;
@@ -198,17 +191,27 @@ namespace ProjectPRN292
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(21, 327);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(206, 18);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Tìm kiếm khách hàng theo tên";
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 642);
+            this.ClientSize = new System.Drawing.Size(730, 657);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Name = "frmKhachHang";
@@ -224,8 +227,6 @@ namespace ProjectPRN292
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtDiaChi;
@@ -241,5 +242,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.MaskedTextBox mtxtSdt;
+        private System.Windows.Forms.Label label5;
     }
 }

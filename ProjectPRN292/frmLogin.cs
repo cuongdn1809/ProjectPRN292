@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 
@@ -22,35 +23,45 @@ namespace ProjectPRN292
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+           
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                MessageBox.Show("Username and Password must not empty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tên người dùng và Mật khẩu không được để trống!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
             }
-
             else
             {
+                //               var hasPass = new Regex(@"^.*[A-Z].*[#@$!%*?&-]+.*$");
+                //               if (!hasPass.IsMatch(txtPassword.Text))
+                //               {
+                //                   MessageBox.Show("Mật khẩu sai!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //                   txtUsername.Focus();
+                //               }
+                //               else
+                //               {
                 if (LoginDAL.IsAccountValid(txtUsername.Text.Trim(), txtPassword.Text.Trim()).Count > 0)
-                {
-                    DataTable table = LoginDAL.checkAccount(txtUsername.Text, txtPassword.Text);
-                    frmHome h = new frmHome();
-                    if (table.Rows.Count > 0)
                     {
-                        Visible = false;
-                        h.ShowDialog();
-                        
-                    }
-                    
+                        DataTable table = LoginDAL.checkAccount(txtUsername.Text, txtPassword.Text);
+                        frmHome h = new frmHome();
+                        if (table.Rows.Count > 0)
+                        {
+                            Visible = false;
+                            h.ShowDialog();
 
-                }
-                else
-                    MessageBox.Show("Wrong username or password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+ //               }
+
+                
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you really want to exit?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát ra không?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
                 Application.Exit();

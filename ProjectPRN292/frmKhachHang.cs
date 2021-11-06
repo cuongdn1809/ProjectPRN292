@@ -41,7 +41,7 @@ namespace ProjectPRN292
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Chương trình lỗi");
             }
         }
 
@@ -58,17 +58,17 @@ namespace ProjectPRN292
                 };
                 if (listkhachhang.InsertKhachHang(kh) > 0)
                 {
-                    MessageBox.Show("Insert success.");
+                    MessageBox.Show("Thêm thành công.");
                     loadKhachHang();
                 }
                 else
                 {
-                    MessageBox.Show("Insert failse");
+                    MessageBox.Show("Thêm thất bại.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Chương trình lỗi");
             }
         }
 
@@ -85,50 +85,25 @@ namespace ProjectPRN292
                 };
                 if (listkhachhang.UpdateKhachHang(kh) > 0)
                 {
-                    MessageBox.Show("update success.");
+                    MessageBox.Show("Chỉnh sửa thành công.");
                     loadKhachHang();
                 }
                 else
                 {
-                    MessageBox.Show("Update failse");
+                    MessageBox.Show("Chỉnh sửa thất bại.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Chương trình lỗi.");
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (MessageBox.Show("Do you want to delete?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    var kh = new KhachHang()
-                    {
-                        Khachhangid = int.Parse(txtIdKhach.Text)
-                    };
-                    if (listkhachhang.DeleteKhachHang(kh) > 0)
-                    {
-                        MessageBox.Show("Delete success.");
-                        loadKhachHang();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Delete failse");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-            }
-        }
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you really want to exit?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi tác vụ này?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
                 frmHome h = new frmHome();

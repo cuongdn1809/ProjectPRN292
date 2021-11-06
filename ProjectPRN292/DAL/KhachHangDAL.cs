@@ -21,7 +21,7 @@ namespace ProjectPRN292.DAL
         }
         public List<KhachHang> GetKhachHang()
         {
-            List<KhachHang> categories = new List<KhachHang>();
+            List<KhachHang> khachhang = new List<KhachHang>();
             command = new SqlCommand("select * from KhachHang", GetConnection());
             // Sur dung Mo hinh Connected
             try
@@ -32,7 +32,7 @@ namespace ProjectPRN292.DAL
                 {
                     while (reader.Read())
                     {
-                        categories.Add(new KhachHang
+                        khachhang.Add(new KhachHang
                         {
                             Khachhangid = reader.GetInt32(0),
                             Tenkhachhang = reader.GetString(1),
@@ -51,7 +51,7 @@ namespace ProjectPRN292.DAL
             {
                 connection.Close();
             }
-            return categories;
+            return khachhang;
         }
         /*        public List<KhachHang> GetKhachHang()
                 {
@@ -129,7 +129,7 @@ namespace ProjectPRN292.DAL
             return result;
         }
 
-        public int DeleteKhachHang(KhachHang khachhang)
+/*        public int DeleteKhachHang(KhachHang khachhang)
         {
             int result = 0;
 
@@ -151,12 +151,12 @@ namespace ProjectPRN292.DAL
             }
 
             return result;
-        }
-        public DataTable GetKhachHangByName(string name)
+        }*/
+  /*      public DataTable GetKhachHangByName(string name)
         {
             return Database.GetDataBySQL("SELECT * FROM KhachHang WHERE TenKhachHang like '%" + name + "%'");
-        }
-        public  List<KhachHang> SearchKhachHangByName(string name)
+        }*/
+/*        public  List<KhachHang> SearchKhachHangByName(string name)
         {
             List<KhachHang> khachhang = new List<KhachHang>();
             DataTable dataTable = GetKhachHangByName(name);
@@ -169,6 +169,40 @@ namespace ProjectPRN292.DAL
                 KhachHang kh = new KhachHang(khachhangid, Name, diachi, sdt);
 
                 khachhang.Add(kh);
+            }
+            return khachhang;
+        }*/
+        public List<KhachHang> SearchKhachHangByName(string name)
+        {
+            List<KhachHang> khachhang = new List<KhachHang>();
+            command = new SqlCommand("SELECT * FROM KhachHang WHERE TenKhachHang like '%" + name + "%'", GetConnection());
+            // Sur dung Mo hinh Connected
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        khachhang.Add(new KhachHang
+                        {
+                            Khachhangid = reader.GetInt32(0),
+                            Tenkhachhang = reader.GetString(1),
+                            Diachi = reader.GetString(2),
+                            Sdt = reader.GetString(3)
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
             }
             return khachhang;
         }

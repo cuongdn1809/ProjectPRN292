@@ -41,11 +41,11 @@ namespace ProjectPRN292
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(176, 255);
+            this.btnLogin.Location = new System.Drawing.Point(147, 255);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(76, 32);
+            this.btnLogin.Size = new System.Drawing.Size(129, 32);
             this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -53,22 +53,22 @@ namespace ProjectPRN292
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 120);
+            this.label1.Location = new System.Drawing.Point(35, 120);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.Size = new System.Drawing.Size(105, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Username";
+            this.label1.Text = "Tên đăng nhập";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(65, 184);
+            this.label2.Location = new System.Drawing.Point(35, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Password";
+            this.label2.Text = "Mật khẩu";
             // 
             // txtUsername
             // 
@@ -91,9 +91,9 @@ namespace ProjectPRN292
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(87, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(409, 36);
+            this.label3.Size = new System.Drawing.Size(324, 36);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Phần mềm quản lí kho hàng";
+            this.label3.Text = "Đăng nhập phần mềm";
             // 
             // btnExit
             // 
@@ -102,7 +102,7 @@ namespace ProjectPRN292
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(77, 32);
             this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -121,7 +121,7 @@ namespace ProjectPRN292
             this.Controls.Add(this.btnLogin);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
