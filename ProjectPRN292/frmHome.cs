@@ -91,14 +91,12 @@ namespace ProjectPRN292
 
             dgvHome.Columns.Add("tenSanPhamcol", "Tên Sản Phẩm");
             dgvHome.Columns["tenSanPhamcol"].DataPropertyName = "TenSanPham";
+
             dgvHome.Columns.Add("ngayNhapcol", "Ngày Nhập Kho ");
             dgvHome.Columns["ngayNhapcol"].DataPropertyName = "NgayNhapHang";
 
             dgvHome.Columns.Add("soLuongcol", "Số Lượng");
             dgvHome.Columns["soLuongcol"].DataPropertyName = "SoLuong";
-
-            dgvHome.Columns.Add("giacol", "Giá Thuê");
-            dgvHome.Columns["giacol"].DataPropertyName = "GiaThue";
 
             dgvHome.Columns.Add("giacol", "Giá Thuê");
             dgvHome.Columns["giacol"].DataPropertyName = "GiaThue";
@@ -190,23 +188,23 @@ namespace ProjectPRN292
             switch (count)
             {
                 case 0:
-                    MessageBox.Show("You must select one ");
+                    MessageBox.Show("Bạn chưa chọn kho hàng");
                     break;
                 case 1:
-                    int ID = int.Parse(dgvHome.CurrentRow.Cells["khocol"].Value.ToString());
-                    string date = "2";
-                        //= dgvHome.CurrentRow.Cells["ngayNhapcol"].Value.ToString();
-                    string tenKH = dgvHome.CurrentRow.Cells["tenKhachHangcol"].Value.ToString();
-                    string tenSP = dgvHome.CurrentRow.Cells["tenSanPhamcol"].Value.ToString();
-                    int giathue = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
-                    frmXuatKho frm = new frmXuatKho(date, ID, tenKH, tenSP,giathue);
+
+                    frmXuatKho.id = int.Parse(dgvHome.CurrentRow.Cells["khocol"].Value.ToString());
+                    //frmXuatKho.date =  DateTime.Parse(dgvHome.CurrentRow.Cells["ngayNhapcol"].Value.ToString());                  
+                    frmXuatKho.tenKH = dgvHome.CurrentRow.Cells["tenKhachHangcol"].Value.ToString();
+                    frmXuatKho.tenSP = dgvHome.CurrentRow.Cells["tenSanPhamcol"].Value.ToString();
+                    frmXuatKho.GiaThue = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
+                    frmXuatKho frm = new frmXuatKho();
                     Visible = false;
                     // Show                  
                     frm.ShowDialog();
                   
                     break;
                 default:
-                    MessageBox.Show("You must only select one");
+                    MessageBox.Show("Bạn chỉ được chọn một kho hàng");
                     break;
                   
             }

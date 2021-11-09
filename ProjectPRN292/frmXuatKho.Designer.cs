@@ -36,7 +36,6 @@ namespace ProjectPRN292
             this.dtpNgayNhapHang = new System.Windows.Forms.DateTimePicker();
             this.txtKhachHang = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.dtpNgayXuatHang = new System.Windows.Forms.DateTimePicker();
             this.txtTongGia = new System.Windows.Forms.TextBox();
             this.txtKho = new System.Windows.Forms.TextBox();
@@ -64,7 +63,7 @@ namespace ProjectPRN292
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(50, 315);
+            this.btnConfirm.Location = new System.Drawing.Point(125, 322);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(68, 27);
@@ -110,16 +109,6 @@ namespace ProjectPRN292
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 66;
             this.label8.Text = "Khách Hàng";
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(170, 315);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(68, 27);
-            this.btnHuy.TabIndex = 65;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // dtpNgayXuatHang
             // 
@@ -193,7 +182,6 @@ namespace ProjectPRN292
             this.Controls.Add(this.dtpNgayNhapHang);
             this.Controls.Add(this.txtKhachHang);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.dtpNgayXuatHang);
             this.Controls.Add(this.txtTongGia);
             this.Controls.Add(this.txtKho);
@@ -202,6 +190,7 @@ namespace ProjectPRN292
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Name = "frmXuatKho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmXuatKho";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,7 +206,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.DateTimePicker dtpNgayNhapHang;
         private System.Windows.Forms.TextBox txtKhachHang;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.DateTimePicker dtpNgayXuatHang;
         private System.Windows.Forms.TextBox txtTongGia;
         private System.Windows.Forms.TextBox txtKho;

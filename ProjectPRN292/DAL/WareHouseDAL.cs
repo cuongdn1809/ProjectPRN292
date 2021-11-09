@@ -77,7 +77,7 @@ namespace ProjectPRN292.DAL
         public List<WareHouse> GetWareHouse()
         {
             List<WareHouse> wareHouses = new List<WareHouse>();
-            command = new SqlCommand("select n.NhapHangID, k.TenKhachHang,s.TenSanPham, n.SoLuong,n.NgayNhapHang,n.GiaThue,n.Note from KhachHang k, NhapHang n, SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID", GetConnection());
+            command = new SqlCommand("select n.NhapHangID, k.TenKhachHang,s.TenSanPham,n.NgayNhapHang, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID", GetConnection());
             // Sử dụng mô hình: Connected
             try
             {
@@ -92,8 +92,8 @@ namespace ProjectPRN292.DAL
                             NhapHangID = reader.GetInt32(0),
                             TenKhachHang = reader.GetString(1),
                             TenSanPham = reader.GetString(2),
-                            Soluong = reader.GetInt32(3),
-                            NgayNhapKho = reader.GetDateTime(4),
+                            NgayNhapKho = reader.GetDateTime(3),
+                            Soluong = reader.GetInt32(4),                          
                             Giathue = reader.GetInt32(5),
                             Note = reader.GetString(6),
 

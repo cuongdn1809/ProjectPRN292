@@ -158,9 +158,9 @@ namespace ProjectPRN292
             // dgvHome
             // 
             this.dgvHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHome.Location = new System.Drawing.Point(36, 70);
+            this.dgvHome.Location = new System.Drawing.Point(21, 70);
             this.dgvHome.Name = "dgvHome";
-            this.dgvHome.Size = new System.Drawing.Size(712, 333);
+            this.dgvHome.Size = new System.Drawing.Size(745, 333);
             this.dgvHome.TabIndex = 20;
             // 
             // frmHome
