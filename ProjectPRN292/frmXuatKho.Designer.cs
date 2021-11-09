@@ -33,7 +33,6 @@ namespace ProjectPRN292
             this.label2 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.dtpNgayNhapHang = new System.Windows.Forms.DateTimePicker();
             this.txtKhachHang = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtpNgayXuatHang = new System.Windows.Forms.DateTimePicker();
@@ -43,6 +42,8 @@ namespace ProjectPRN292
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.dtpNgayNhapKho = new System.Windows.Forms.DateTimePicker();
+            this.btnTrangchu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtGiatheoNgay
@@ -63,13 +64,14 @@ namespace ProjectPRN292
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(125, 322);
+            this.btnConfirm.Location = new System.Drawing.Point(57, 323);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(68, 27);
             this.btnConfirm.TabIndex = 70;
             this.btnConfirm.Text = "Xác Nhận";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // label10
             // 
@@ -80,17 +82,6 @@ namespace ProjectPRN292
             this.label10.Size = new System.Drawing.Size(86, 13);
             this.label10.TabIndex = 69;
             this.label10.Text = "Ngày nhập hàng";
-            // 
-            // dtpNgayNhapHang
-            // 
-            this.dtpNgayNhapHang.Checked = false;
-            this.dtpNgayNhapHang.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayNhapHang.Location = new System.Drawing.Point(148, 194);
-            this.dtpNgayNhapHang.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpNgayNhapHang.Name = "dtpNgayNhapHang";
-            this.dtpNgayNhapHang.Size = new System.Drawing.Size(129, 20);
-            this.dtpNgayNhapHang.TabIndex = 68;
-            this.dtpNgayNhapHang.Value = new System.DateTime(2021, 11, 9, 10, 35, 57, 0);
             // 
             // txtKhachHang
             // 
@@ -113,6 +104,7 @@ namespace ProjectPRN292
             // dtpNgayXuatHang
             // 
             this.dtpNgayXuatHang.Checked = false;
+            this.dtpNgayXuatHang.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayXuatHang.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayXuatHang.Location = new System.Drawing.Point(148, 234);
             this.dtpNgayXuatHang.Name = "dtpNgayXuatHang";
@@ -170,16 +162,37 @@ namespace ProjectPRN292
             this.label9.TabIndex = 58;
             this.label9.Text = "Xuất Kho";
             // 
+            // dtpNgayNhapKho
+            // 
+            this.dtpNgayNhapKho.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayNhapKho.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayNhapKho.Location = new System.Drawing.Point(148, 194);
+            this.dtpNgayNhapKho.Name = "dtpNgayNhapKho";
+            this.dtpNgayNhapKho.Size = new System.Drawing.Size(129, 20);
+            this.dtpNgayNhapKho.TabIndex = 73;
+            // 
+            // btnTrangchu
+            // 
+            this.btnTrangchu.Location = new System.Drawing.Point(162, 323);
+            this.btnTrangchu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrangchu.Name = "btnTrangchu";
+            this.btnTrangchu.Size = new System.Drawing.Size(68, 27);
+            this.btnTrangchu.TabIndex = 74;
+            this.btnTrangchu.Text = "Trang Chủ";
+            this.btnTrangchu.UseVisualStyleBackColor = true;
+            this.btnTrangchu.Click += new System.EventHandler(this.btnTrangchu_Click);
+            // 
             // frmXuatKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 385);
+            this.Controls.Add(this.btnTrangchu);
+            this.Controls.Add(this.dtpNgayNhapKho);
             this.Controls.Add(this.txtGiatheoNgay);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dtpNgayNhapHang);
             this.Controls.Add(this.txtKhachHang);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpNgayXuatHang);
@@ -203,7 +216,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dtpNgayNhapHang;
         private System.Windows.Forms.TextBox txtKhachHang;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpNgayXuatHang;
@@ -213,5 +225,7 @@ namespace ProjectPRN292
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dtpNgayNhapKho;
+        private System.Windows.Forms.Button btnTrangchu;
     }
 }

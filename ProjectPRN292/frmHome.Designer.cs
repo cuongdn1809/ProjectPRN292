@@ -37,9 +37,10 @@ namespace ProjectPRN292
             this.cbTimkiem = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTim = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvHome = new System.Windows.Forms.DataGridView();
+            this.btnExitt = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHome)).BeginInit();
@@ -48,7 +49,7 @@ namespace ProjectPRN292
             // btnHoaDon
             // 
             this.btnHoaDon.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHoaDon.Location = new System.Drawing.Point(293, 19);
+            this.btnHoaDon.Location = new System.Drawing.Point(253, 19);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(75, 23);
             this.btnHoaDon.TabIndex = 13;
@@ -58,7 +59,7 @@ namespace ProjectPRN292
             // 
             // btnXuatKho
             // 
-            this.btnXuatKho.Location = new System.Drawing.Point(108, 19);
+            this.btnXuatKho.Location = new System.Drawing.Point(87, 19);
             this.btnXuatKho.Name = "btnXuatKho";
             this.btnXuatKho.Size = new System.Drawing.Size(75, 23);
             this.btnXuatKho.TabIndex = 12;
@@ -69,7 +70,7 @@ namespace ProjectPRN292
             // btnNhapKho
             // 
             this.btnNhapKho.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNhapKho.Location = new System.Drawing.Point(10, 19);
+            this.btnNhapKho.Location = new System.Drawing.Point(6, 19);
             this.btnNhapKho.Name = "btnNhapKho";
             this.btnNhapKho.Size = new System.Drawing.Size(75, 23);
             this.btnNhapKho.TabIndex = 11;
@@ -79,7 +80,7 @@ namespace ProjectPRN292
             // 
             // btnKhachHang
             // 
-            this.btnKhachHang.Location = new System.Drawing.Point(200, 20);
+            this.btnKhachHang.Location = new System.Drawing.Point(172, 19);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(75, 23);
             this.btnKhachHang.TabIndex = 10;
@@ -101,19 +102,17 @@ namespace ProjectPRN292
             // 
             // cbTimkiem
             // 
-            this.cbTimkiem.FormattingEnabled = true;
             this.cbTimkiem.Items.AddRange(new object[] {
             "Tên khách hàng",
             "Tên Sản Phẩm"});
-            this.cbTimkiem.Location = new System.Drawing.Point(6, 23);
+            this.cbTimkiem.Location = new System.Drawing.Point(6, 21);
             this.cbTimkiem.Name = "cbTimkiem";
-            this.cbTimkiem.Size = new System.Drawing.Size(140, 21);
+            this.cbTimkiem.Size = new System.Drawing.Size(109, 21);
             this.cbTimkiem.TabIndex = 16;
-            this.cbTimkiem.SelectedIndexChanged += new System.EventHandler(this.cbTimkiem_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(296, 21);
+            this.button1.Location = new System.Drawing.Point(217, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 23);
             this.button1.TabIndex = 17;
@@ -123,45 +122,59 @@ namespace ProjectPRN292
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.txtTim);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbTimkiem);
             this.groupBox1.Location = new System.Drawing.Point(21, 409);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(365, 58);
+            this.groupBox1.Size = new System.Drawing.Size(288, 58);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm Kho Theo";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtTim
+            // 
+            this.txtTim.Location = new System.Drawing.Point(121, 21);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(90, 20);
+            this.txtTim.TabIndex = 18;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.btnExitt);
             this.groupBox2.Controls.Add(this.btnHoaDon);
             this.groupBox2.Controls.Add(this.btnNhapKho);
             this.groupBox2.Controls.Add(this.btnKhachHang);
             this.groupBox2.Controls.Add(this.btnXuatKho);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(392, 409);
+            this.groupBox2.Location = new System.Drawing.Point(309, 409);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(374, 58);
+            this.groupBox2.Size = new System.Drawing.Size(420, 58);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
-            // txtTim
-            // 
-            this.txtTim.Location = new System.Drawing.Point(152, 23);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(138, 20);
-            this.txtTim.TabIndex = 18;
-            // 
             // dgvHome
             // 
+            this.dgvHome.AllowUserToAddRows = false;
+            this.dgvHome.AllowUserToDeleteRows = false;
             this.dgvHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHome.Location = new System.Drawing.Point(21, 70);
+            this.dgvHome.Location = new System.Drawing.Point(21, 59);
             this.dgvHome.Name = "dgvHome";
-            this.dgvHome.Size = new System.Drawing.Size(745, 333);
+            this.dgvHome.Size = new System.Drawing.Size(708, 344);
             this.dgvHome.TabIndex = 20;
+            // 
+            // btnExitt
+            // 
+            this.btnExitt.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExitt.Location = new System.Drawing.Point(334, 19);
+            this.btnExitt.Name = "btnExitt";
+            this.btnExitt.Size = new System.Drawing.Size(75, 23);
+            this.btnExitt.TabIndex = 14;
+            this.btnExitt.Text = "Thoát";
+            this.btnExitt.UseVisualStyleBackColor = true;
+            this.btnExitt.Click += new System.EventHandler(this.btnExitt_Click);
             // 
             // frmHome
             // 
@@ -169,7 +182,7 @@ namespace ProjectPRN292
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnHoaDon;
-            this.ClientSize = new System.Drawing.Size(778, 484);
+            this.ClientSize = new System.Drawing.Size(736, 484);
             this.Controls.Add(this.dgvHome);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -200,5 +213,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.DataGridView dgvHome;
+        private System.Windows.Forms.Button btnExitt;
     }
 }

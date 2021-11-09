@@ -9,7 +9,8 @@ namespace ProjectPRN292.Entity
     {
         private DateTime ngayNhapHang;
         private DateTime ngayXuatHang;
-        private double tongTien;
+        private int giaThue;
+        private int tongTien;
         private int khachHangId;
         private int sanPhamId;
 
@@ -17,10 +18,11 @@ namespace ProjectPRN292.Entity
         {
         }
 
-        public HoaDon(DateTime ngayNhapHang, DateTime ngayXuatHang, double tongTien, int khachHangId, int sanPhamId)
+        public HoaDon(DateTime ngayNhapHang, DateTime ngayXuatHang, int giaThue, int tongTien, int khachHangId, int sanPhamId)
         {
             this.ngayNhapHang = ngayNhapHang;
             this.ngayXuatHang = ngayXuatHang;
+            this.giaThue = giaThue;
             this.tongTien = tongTien;
             this.khachHangId = khachHangId;
             this.sanPhamId = sanPhamId;
@@ -28,7 +30,8 @@ namespace ProjectPRN292.Entity
 
         public DateTime NgayNhapHang { get => ngayNhapHang; set => ngayNhapHang = value; }
         public DateTime NgayXuatHang { get => ngayXuatHang; set => ngayXuatHang = value; }
-        public double TongTien { get => tongTien; set => tongTien = value; }
+        public int GiaThue { get => giaThue; set => giaThue = value; }
+        public int TongTien { get => tongTien; set => tongTien = value; }
         public int KhachHangId { get => khachHangId; set => khachHangId = value; }
         public int SanPhamId { get => sanPhamId; set => sanPhamId = value; }
 

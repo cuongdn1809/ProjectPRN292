@@ -103,7 +103,7 @@ namespace ProjectPRN292
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi tác vụ này?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi tác vụ này?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
                 frmHome h = new frmHome();

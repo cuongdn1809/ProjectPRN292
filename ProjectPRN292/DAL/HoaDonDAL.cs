@@ -23,10 +23,11 @@ namespace ProjectPRN292.DAL
         public int InsertBill(HoaDon bill)
         {
             int result = 0;
-            string sql = @"INSERT INTO[dbo].[HoaDon]([NgayNhapHang],[NgayXuatHang],[TongTien],[KhachHangID],[SanPhamID])VALUES(@ngayNH,@ngayXH,@tongTien,@khID,@spID)";
+            string sql = @"INSERT INTO[dbo].[HoaDon]([NgayNhapHang],[NgayXuatHang],[GiaThue],[TongTien],[KhachHangID],[SanPhamID])VALUES(@ngayNH,@ngayXH,@giaThue,@tongTien,@khID,@spID)";
             command = new SqlCommand(sql, GetConnection());
-            command.Parameters.AddWithValue("@ngayNH", bill.NgayNhapHang);
+            command.Parameters.AddWithValue("@ngayNH", bill.NgayNhapHang);           
             command.Parameters.AddWithValue("@ngayXH", bill.NgayXuatHang);
+            command.Parameters.AddWithValue("@giaThue", bill.GiaThue);
             command.Parameters.AddWithValue("@tongTien", bill.TongTien);
             command.Parameters.AddWithValue("@khID", bill.KhachHangId);
             command.Parameters.AddWithValue("@spID", bill.SanPhamId);

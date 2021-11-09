@@ -12,11 +12,11 @@ namespace ProjectPRN292
 {
     public partial class frmHome : Form
     {
-        
+        WareHouseDAL home = new WareHouseDAL();
         public frmHome()
         {
             InitializeComponent();
-            cbTimkiem.SelectedIndex = 0;
+            txtTim.Focus();
         }
        
         private void btnKhachHang_Click(object sender, EventArgs e)
@@ -116,11 +116,14 @@ namespace ProjectPRN292
  
         }
 
-        WareHouseDAL home = new WareHouseDAL();
-        private void LoadWarehouse()
+       
+        public void LoadWarehouse()
         {
+            string sql = "select n.NhapHangID, k.TenKhachHang,s.TenSanPham,n.NgayNhapHang, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
+                "SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID";
+            DataTable dt = Database.ExecuteQuery(sql);
             dgvHome.DataSource = null;
-            dgvHome.DataSource = home.GetWareHouse();
+            dgvHome.DataSource = dt;           
             dgvHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -128,8 +131,10 @@ namespace ProjectPRN292
         {
             try
             {
+                cbTimkiem.SelectedIndex = 0;
                 SetUpDataTableForWareHouse();
                 LoadWarehouse();
+                
             }
             catch (Exception ex)
             {
@@ -137,40 +142,7 @@ namespace ProjectPRN292
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbTimkiem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnXuatKho_Click(object sender, EventArgs e)
         {
@@ -193,7 +165,7 @@ namespace ProjectPRN292
                 case 1:
 
                     frmXuatKho.id = int.Parse(dgvHome.CurrentRow.Cells["khocol"].Value.ToString());
-                    //frmXuatKho.date =  DateTime.Parse(dgvHome.CurrentRow.Cells["ngayNhapcol"].Value.ToString());                  
+                    frmXuatKho.date = Convert.ToDateTime( dgvHome.CurrentRow.Cells["ngayNhapcol"].Value);                  
                     frmXuatKho.tenKH = dgvHome.CurrentRow.Cells["tenKhachHangcol"].Value.ToString();
                     frmXuatKho.tenSP = dgvHome.CurrentRow.Cells["tenSanPhamcol"].Value.ToString();
                     frmXuatKho.GiaThue = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
@@ -229,9 +201,7 @@ namespace ProjectPRN292
                 else
                 {
                     MessageBox.Show("Hãy nhập tên khách hàng!");
-                    dgvHome.DataSource = null;
-                    dgvHome.DataSource = home.GetWareHouse();
-                    dgvHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    LoadWarehouse();
                     txtTim.Focus();
                 }
             }
@@ -252,14 +222,20 @@ namespace ProjectPRN292
                 else
                 {
                     MessageBox.Show("Hãy nhập tên sản phẩm!");
-                    dgvHome.DataSource = null;
-                    dgvHome.DataSource = home.GetWareHouse();
-                    dgvHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    LoadWarehouse();
                     txtTim.Focus();
                 }
             }
         }
 
+        private void btnExitt_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn  muốn thoát không ?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }
 

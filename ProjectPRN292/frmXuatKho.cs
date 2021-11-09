@@ -19,42 +19,64 @@ namespace ProjectPRN292
         public static int GiaThue;
 
         HoaDonDAL listBill = new HoaDonDAL();
-        
+
         public frmXuatKho()
-        { 
-            InitializeComponent();          
+        {
+            InitializeComponent();
+            //set value cho nhay nhap kho
+            string a = date.ToString("dd/MM/yyyy");
+            string[] result = a.Split('/');
+            dtpNgayNhapKho.Value = new DateTime(int.Parse(result[2]), int.Parse(result[1]), int.Parse(result[0]));
+
             this.txtKho.Text = id.ToString();
             this.txtKhachHang.Text = tenKH;
             dtpNgayXuatHang.Value = DateTime.Now;
-            //dtpNgayNhapHang.Value =date;
             this.txtGiatheoNgay.Text = GiaThue.ToString();
+            this.txtTongGia.Text = tonggiathue(GiaThue).ToString();
         }
-
         private void frmXuatKho_Load(object sender, EventArgs e)
         {
            
         }
-
-        private void btnLuu_Click(object sender, EventArgs e)
+        public int tonggiathue( int Giathue)
         {
-            var bill = new HoaDon();
-            {
+            TimeSpan interval = (DateTime.Now).Subtract(date);
+            int tonggiathue = Giathue * interval.Days;
+            return tonggiathue;
+        }
+    
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {           
+            try { 
+
+             var bill = new HoaDon();            
                 DateTime aDateTime = DateTime.Now;
                 bill.NgayNhapHang = date;
                 bill.NgayXuatHang = aDateTime;
-                TimeSpan interval = aDateTime.Subtract(date);
-                bill.TongTien = interval.Days * GiaThue;
+                bill.GiaThue = GiaThue;
+                bill.TongTien = tonggiathue(GiaThue);
                 WareHouseDAL a = new WareHouseDAL();
                 int idkh = a.getIDKhachHang(tenKH);
                 bill.KhachHangId = idkh;
                 int idsp = a.getIDSanPham(tenSP);
                 bill.SanPhamId = idsp;
                 listBill.InsertBill(bill);
-            }
+                a.DelateWareHouse(id);
             MessageBox.Show("Xuat kho Thanh cong");
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Chương trình lỗi");
+            }
         }
 
-       
+        private void btnTrangchu_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            
+            f.ShowDialog();
+            Visible = false;
+        }
     }
 }
