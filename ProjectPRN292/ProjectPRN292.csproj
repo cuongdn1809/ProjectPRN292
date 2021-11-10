@@ -66,11 +66,11 @@
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="Entity\KhachHang.cs" />
     <Compile Include="Entity\QuanLy.cs" />
-    <Compile Include="frmHome.cs">
+    <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <Compile Include="frmTrangChu.Designer.cs">
+      <DependentUpon>frmTrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -78,11 +78,23 @@
     <Compile Include="frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhoHang.Designer.cs">
+      <DependentUpon>frmKhoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapHang.Designer.cs">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmXuatKho.cs">
       <SubType>Form</SubType>
@@ -92,26 +104,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmWareHouseDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWareHouseDetail.Designer.cs">
-      <DependentUpon>frmWareHouseDetail.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmAddSanPham.resx">
       <DependentUpon>frmAddSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBillDetail.resx">
       <DependentUpon>frmBillDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <EmbeddedResource Include="frmTrangChu.resx">
+      <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmKhoHang.resx">
+      <DependentUpon>frmKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapHang.resx">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmXuatKho.resx">
       <DependentUpon>frmXuatKho.cs</DependentUpon>
@@ -125,9 +137,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmWareHouseDetail.resx">
-      <DependentUpon>frmWareHouseDetail.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

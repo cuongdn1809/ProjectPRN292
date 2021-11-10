@@ -104,7 +104,7 @@ namespace ProjectPRN292
             DialogResult result = MessageBox.Show("Are you really want to exit?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                frmHome h = new frmHome();
+                frmTrangChu h = new frmTrangChu();
                 Visible = false;
                 h.ShowDialog();
             }

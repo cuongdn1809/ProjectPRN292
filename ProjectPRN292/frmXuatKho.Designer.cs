@@ -50,7 +50,7 @@ namespace ProjectPRN292
             // 
             this.txtGiatheoNgay.Location = new System.Drawing.Point(148, 123);
             this.txtGiatheoNgay.Name = "txtGiatheoNgay";
-            this.txtGiatheoNgay.Size = new System.Drawing.Size(46, 20);
+            this.txtGiatheoNgay.Size = new System.Drawing.Size(129, 20);
             this.txtGiatheoNgay.TabIndex = 72;
             // 
             // label2
@@ -122,7 +122,7 @@ namespace ProjectPRN292
             // 
             this.txtKho.Location = new System.Drawing.Point(147, 87);
             this.txtKho.Name = "txtKho";
-            this.txtKho.Size = new System.Drawing.Size(46, 20);
+            this.txtKho.Size = new System.Drawing.Size(130, 20);
             this.txtKho.TabIndex = 62;
             // 
             // label6

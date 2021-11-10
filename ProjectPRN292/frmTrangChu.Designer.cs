@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPRN292
 {
-    partial class frmHome
+    partial class frmTrangChu
     {
         /// <summary>
         /// Required designer variable.
@@ -39,8 +39,8 @@ namespace ProjectPRN292
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvHome = new System.Windows.Forms.DataGridView();
             this.btnExitt = new System.Windows.Forms.Button();
+            this.dgvHome = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHome)).BeginInit();
@@ -155,16 +155,6 @@ namespace ProjectPRN292
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
-            // dgvHome
-            // 
-            this.dgvHome.AllowUserToAddRows = false;
-            this.dgvHome.AllowUserToDeleteRows = false;
-            this.dgvHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHome.Location = new System.Drawing.Point(21, 59);
-            this.dgvHome.Name = "dgvHome";
-            this.dgvHome.Size = new System.Drawing.Size(708, 344);
-            this.dgvHome.TabIndex = 20;
-            // 
             // btnExitt
             // 
             this.btnExitt.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -176,7 +166,17 @@ namespace ProjectPRN292
             this.btnExitt.UseVisualStyleBackColor = true;
             this.btnExitt.Click += new System.EventHandler(this.btnExitt_Click);
             // 
-            // frmHome
+            // dgvHome
+            // 
+            this.dgvHome.AllowUserToAddRows = false;
+            this.dgvHome.AllowUserToDeleteRows = false;
+            this.dgvHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHome.Location = new System.Drawing.Point(21, 59);
+            this.dgvHome.Name = "dgvHome";
+            this.dgvHome.Size = new System.Drawing.Size(708, 344);
+            this.dgvHome.TabIndex = 20;
+            // 
+            // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,9 +188,9 @@ namespace ProjectPRN292
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmHome";
+            this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
+            this.Text = "Trang Chủ";
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

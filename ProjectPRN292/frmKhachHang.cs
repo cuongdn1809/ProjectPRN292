@@ -112,7 +112,7 @@ namespace ProjectPRN292
             DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi tác vụ này?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                frmHome h = new frmHome();
+                frmTrangChu h = new frmTrangChu();
                 Visible = false;
                 h.ShowDialog();
             }

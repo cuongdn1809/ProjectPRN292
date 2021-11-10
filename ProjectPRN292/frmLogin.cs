@@ -43,7 +43,7 @@ namespace ProjectPRN292
                 if (LoginDAL.IsAccountValid(txtUsername.Text.Trim(), txtPassword.Text.Trim()).Count > 0)
                     {
                         DataTable table = LoginDAL.checkAccount(txtUsername.Text, txtPassword.Text);
-                        frmHome h = new frmHome();
+                        frmTrangChu h = new frmTrangChu();
                         if (table.Rows.Count > 0)
                         {
                             Visible = false;

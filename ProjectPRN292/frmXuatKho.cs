@@ -73,7 +73,7 @@ namespace ProjectPRN292
 
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
-            frmHome f = new frmHome();
+            frmTrangChu f = new frmTrangChu();
             
             f.ShowDialog();
             Visible = false;
