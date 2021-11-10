@@ -25,11 +25,17 @@ namespace ProjectPRN292
             txtTenKhach.DataBindings.Clear();
             txtDiaChi.DataBindings.Clear();
             mtxtSdt.DataBindings.Clear();
+
             txtIdKhach.DataBindings.Add("Text", kh, "KhachHangID");
             txtTenKhach.DataBindings.Add("Text", kh, "TenKhachHang");
             txtDiaChi.DataBindings.Add("Text", kh, "DiaChi");
             mtxtSdt.DataBindings.Add("Text", kh, "Sdt");
+          
             dgvKhachHang.DataSource = kh;
+            dgvKhachHang.Columns[0].HeaderText = "Mã khách hàng";
+            dgvKhachHang.Columns[1].HeaderText = "Tên khách hàng";
+            dgvKhachHang.Columns[2].HeaderText = "Địa chỉ";
+            dgvKhachHang.Columns[3].HeaderText = "Số điện thoại";
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)

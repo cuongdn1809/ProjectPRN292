@@ -126,7 +126,7 @@ namespace ProjectPRN292
         public Boolean InsertDonNhap()
         {
             //bac edit
-            LoginDAL login = new LoginDAL();
+            /*LoginDAL login = new LoginDAL();
             string format = "dd/MM/yyyy";
             string NgayNhapHang = dtpNgayNhap.Value.ToString(format);
             int KhachHangID = getIDKhachHang(txtTenKhachHang.Text);
@@ -162,8 +162,13 @@ namespace ProjectPRN292
             finally
             {
                 connection.Close();
-            }
+            }*/
             return false;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
