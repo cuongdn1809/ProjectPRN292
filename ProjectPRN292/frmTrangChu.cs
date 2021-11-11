@@ -57,7 +57,7 @@ namespace ProjectPRN292
             DataGridViewButtonColumn button = new DataGridViewButtonColumn();
             button.HeaderText = "Chỉnh sửa";
             button.Text = "Chỉnh sửa";
-            button.Name = "edit";
+            button.Name = "editbutton";
             button.UseColumnTextForButtonValue = true;
             dgvHome.Columns.Add(button);
         }
@@ -114,16 +114,6 @@ namespace ProjectPRN292
             button.Name = "editbutton";
             button.UseColumnTextForButtonValue = true;
             dgvHome.Columns.Add(button);
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvHome.Columns[e.ColumnIndex].Name.Equals("edit"))
-            {
-                frmNhapHang f = new frmNhapHang();
-                this.Visible = false;
-                f.ShowDialog();
-            }
         }
 
         public void LoadWarehouse()
@@ -266,6 +256,27 @@ namespace ProjectPRN292
             if (result == DialogResult.OK)
             {
                 this.Close();
+            }
+        }
+
+        private void dgvHome_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvHome.Columns[e.ColumnIndex].Name.Equals("editbutton"))
+            {
+
+                frmKhoHang.id = int.Parse(dgvHome.CurrentRow.Cells["khocol"].Value.ToString());
+                frmKhoHang.date = Convert.ToDateTime(dgvHome.CurrentRow.Cells["ngayNhapcol"].Value);
+                frmKhoHang.tenKH = dgvHome.CurrentRow.Cells["tenKhachHangcol"].Value.ToString().Trim();
+                frmKhoHang.tenSP = dgvHome.CurrentRow.Cells["tenSanPhamcol"].Value.ToString();
+                frmKhoHang.GiaThue = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
+                frmKhoHang.soluong = int.Parse(dgvHome.CurrentRow.Cells["soluongcol"].Value.ToString());
+                // frmKhoHang.GiaSP = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
+                frmKhoHang.Note= dgvHome.CurrentRow.Cells["notecol"].Value.ToString();
+
+                frmKhoHang frm = new frmKhoHang();
+                // Show
+                this.Visible = false;
+                frm.ShowDialog();
             }
         }
     }

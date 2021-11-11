@@ -175,6 +175,7 @@ namespace ProjectPRN292
             this.dgvHome.Name = "dgvHome";
             this.dgvHome.Size = new System.Drawing.Size(708, 344);
             this.dgvHome.TabIndex = 20;
+            this.dgvHome.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHome_CellClick);
             // 
             // frmTrangChu
             // 

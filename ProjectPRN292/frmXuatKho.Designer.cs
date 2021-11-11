@@ -50,6 +50,7 @@ namespace ProjectPRN292
             // 
             this.txtGiatheoNgay.Location = new System.Drawing.Point(148, 123);
             this.txtGiatheoNgay.Name = "txtGiatheoNgay";
+            this.txtGiatheoNgay.ReadOnly = true;
             this.txtGiatheoNgay.Size = new System.Drawing.Size(129, 20);
             this.txtGiatheoNgay.TabIndex = 72;
             // 
@@ -88,6 +89,7 @@ namespace ProjectPRN292
             this.txtKhachHang.Location = new System.Drawing.Point(148, 159);
             this.txtKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtKhachHang.Name = "txtKhachHang";
+            this.txtKhachHang.ReadOnly = true;
             this.txtKhachHang.Size = new System.Drawing.Size(129, 20);
             this.txtKhachHang.TabIndex = 67;
             // 
@@ -105,6 +107,7 @@ namespace ProjectPRN292
             // 
             this.dtpNgayXuatHang.Checked = false;
             this.dtpNgayXuatHang.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayXuatHang.Enabled = false;
             this.dtpNgayXuatHang.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayXuatHang.Location = new System.Drawing.Point(148, 234);
             this.dtpNgayXuatHang.Name = "dtpNgayXuatHang";
@@ -115,6 +118,7 @@ namespace ProjectPRN292
             // 
             this.txtTongGia.Location = new System.Drawing.Point(148, 273);
             this.txtTongGia.Name = "txtTongGia";
+            this.txtTongGia.ReadOnly = true;
             this.txtTongGia.Size = new System.Drawing.Size(129, 20);
             this.txtTongGia.TabIndex = 63;
             // 
@@ -122,6 +126,7 @@ namespace ProjectPRN292
             // 
             this.txtKho.Location = new System.Drawing.Point(147, 87);
             this.txtKho.Name = "txtKho";
+            this.txtKho.ReadOnly = true;
             this.txtKho.Size = new System.Drawing.Size(130, 20);
             this.txtKho.TabIndex = 62;
             // 
@@ -165,6 +170,7 @@ namespace ProjectPRN292
             // dtpNgayNhapKho
             // 
             this.dtpNgayNhapKho.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayNhapKho.Enabled = false;
             this.dtpNgayNhapKho.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayNhapKho.Location = new System.Drawing.Point(148, 194);
             this.dtpNgayNhapKho.Name = "dtpNgayNhapKho";

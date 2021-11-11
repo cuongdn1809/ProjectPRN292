@@ -47,7 +47,7 @@ namespace ProjectPRN292
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbKho = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,7 @@ namespace ProjectPRN292
             // 
             // dtpNgayNhap
             // 
+            this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayNhap.Location = new System.Drawing.Point(155, 95);
             this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
@@ -92,6 +93,7 @@ namespace ProjectPRN292
             this.button1.TabIndex = 88;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbSanPham
             // 
@@ -216,22 +218,22 @@ namespace ProjectPRN292
             this.label5.TabIndex = 75;
             this.label5.Text = "Kho Hàng :";
             // 
-            // label8
+            // lbKho
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(252, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 25);
-            this.label8.TabIndex = 93;
-            this.label8.Text = "1";
+            this.lbKho.AutoSize = true;
+            this.lbKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKho.Location = new System.Drawing.Point(252, 10);
+            this.lbKho.Name = "lbKho";
+            this.lbKho.Size = new System.Drawing.Size(25, 25);
+            this.lbKho.TabIndex = 93;
+            this.lbKho.Text = "1";
             // 
             // frmKhoHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 432);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbKho);
             this.Controls.Add(this.txtGiaThue);
             this.Controls.Add(this.txtGiaSP);
             this.Controls.Add(this.label6);
@@ -251,6 +253,7 @@ namespace ProjectPRN292
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
             this.Name = "frmKhoHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmKhoHang";
             this.Load += new System.EventHandler(this.frmKhoHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nSoLuong)).EndInit();
@@ -279,6 +282,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbKho;
     }
 }
