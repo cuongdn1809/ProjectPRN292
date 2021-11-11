@@ -123,6 +123,13 @@ namespace ProjectPRN292
             //}
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAddSanPham sp = new frmAddSanPham();
+            Visible = false;
+            sp.ShowDialog();
+        }
+
         //    public Boolean InsertDonNhap()
         //    {
         //        //bac edit

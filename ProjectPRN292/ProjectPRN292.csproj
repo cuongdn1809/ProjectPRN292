@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\HoaDonDAL.cs" />
+    <Compile Include="DAL\SanPhamDAL.cs" />
     <Compile Include="DAL\WareHouseDAL.cs" />
     <Compile Include="Entity\DonNhap.cs" />
     <Compile Include="Entity\HoaDon.cs" />
+    <Compile Include="Entity\Sanpham.cs" />
     <Compile Include="Entity\WareHouse.cs" />
     <Compile Include="frmAddSanPham.cs">
       <SubType>Form</SubType>
