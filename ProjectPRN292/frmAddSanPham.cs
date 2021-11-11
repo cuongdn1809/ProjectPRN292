@@ -20,5 +20,10 @@ namespace ProjectPRN292
         {
 
         }
+
+        private void numGia_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
