@@ -1,4 +1,5 @@
 ﻿using ProjectPRN292.DAL;
+using ProjectPRN292.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,27 +23,40 @@ namespace ProjectPRN292
 
 
         WareHouseDAL khohang = new WareHouseDAL();
-        
-           
-       
-      
+        KhachHangDAL listkhachhang = new KhachHangDAL();
+
+
+        //public int getIndex(string tenKH)
+        //{
+            
+        //    int index = -2;
+        //    for (int i = 0; i < cbKhachHang.Items.Count; i++)
+        //    {
+        //        if (int a = cbKhachHang.Items.IndexOf(tenKH))                
+        //           //.Equals(tenKH))
+        //        {
+        //            index = i;
+        //            break;
+        //        }
+        //    }
+        //    return index;
+
+        //}
 
         public frmKhoHang()
         {
             InitializeComponent();
             LoadKhachHang();
             LoadSanPham();
-
         }
-
+       
         public void LoadKhachHang()
         {
-            string sql = "select TenKhachHang from KhachHang";
-            DataTable dt = Database.GetDataBySQL(sql);
+            cbKhachHang.DataSource = listkhachhang.GetKhachHang();
             cbKhachHang.DisplayMember = "TenKhachHang";        
-            cbKhachHang.ValueMember = "TenKhachHang";
-            cbKhachHang.DataSource = dt;
+            //cbKhachHang.ValueMember = "KhachHangID";   
         }
+
         public void LoadSanPham()
         {
             string sql = "select * from SanPham";
@@ -54,21 +68,24 @@ namespace ProjectPRN292
 
         private void cbKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //addBinding();
         }
 
+        public void addBinding()
+        {
+            txtThuongHieu.DataBindings.Add(new Binding("text", cbSanPham, "ThuongHieu"));
+        }
         private void frmKhoHang_Load(object sender, EventArgs e)
         {
-           
+            
             lbKho.Text = id.ToString();
             //set value cho nhay nhap kho
             string a = date.ToString("dd/MM/yyyy");
             string[] result = a.Split('/');
             dtpNgayNhap.Value = new DateTime(int.Parse(result[2]), int.Parse(result[1]), int.Parse(result[0]));
-            //cbKhachHang.SelectedValue = 2;// khohang.getIDKhachHang(tenKH).ToString();
+            cbKhachHang.SelectedIndex = cbKhachHang.FindStringExact(tenKH);
             txtGiaThue.Text = GiaThue.ToString();
-            txtNote.Text = cbKhachHang.Items.IndexOf(tenKH).ToString();
-            ;
+            txtNote.Text = Note;            
             nSoLuong.Value = soluong;
         }
 

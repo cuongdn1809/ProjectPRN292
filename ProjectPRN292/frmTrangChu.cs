@@ -12,7 +12,7 @@ namespace ProjectPRN292
 {
     public partial class frmTrangChu : Form
     {
-       
+        
         KhachHangDAL kh = new KhachHangDAL();
         public frmTrangChu()
         {

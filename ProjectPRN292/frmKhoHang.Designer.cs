@@ -48,19 +48,21 @@ namespace ProjectPRN292
             this.btnSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lbKho = new System.Windows.Forms.Label();
+            this.txtThuongHieu = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // txtGiaThue
             // 
-            this.txtGiaThue.Location = new System.Drawing.Point(155, 307);
+            this.txtGiaThue.Location = new System.Drawing.Point(155, 329);
             this.txtGiaThue.Name = "txtGiaThue";
             this.txtGiaThue.Size = new System.Drawing.Size(211, 20);
             this.txtGiaThue.TabIndex = 92;
             // 
             // txtGiaSP
             // 
-            this.txtGiaSP.Location = new System.Drawing.Point(155, 181);
+            this.txtGiaSP.Location = new System.Drawing.Point(155, 203);
             this.txtGiaSP.Name = "txtGiaSP";
             this.txtGiaSP.Size = new System.Drawing.Size(211, 20);
             this.txtGiaSP.TabIndex = 91;
@@ -68,7 +70,7 @@ namespace ProjectPRN292
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 310);
+            this.label6.Location = new System.Drawing.Point(25, 332);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
@@ -78,7 +80,7 @@ namespace ProjectPRN292
             // dtpNgayNhap
             // 
             this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayNhap.Location = new System.Drawing.Point(155, 95);
+            this.dtpNgayNhap.Location = new System.Drawing.Point(156, 95);
             this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Size = new System.Drawing.Size(211, 20);
@@ -86,7 +88,7 @@ namespace ProjectPRN292
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(309, 137);
+            this.button1.Location = new System.Drawing.Point(310, 137);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 19);
@@ -98,7 +100,7 @@ namespace ProjectPRN292
             // cbSanPham
             // 
             this.cbSanPham.FormattingEnabled = true;
-            this.cbSanPham.Location = new System.Drawing.Point(155, 137);
+            this.cbSanPham.Location = new System.Drawing.Point(156, 137);
             this.cbSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.cbSanPham.Name = "cbSanPham";
             this.cbSanPham.Size = new System.Drawing.Size(147, 21);
@@ -107,7 +109,7 @@ namespace ProjectPRN292
             // cbKhachHang
             // 
             this.cbKhachHang.FormattingEnabled = true;
-            this.cbKhachHang.Location = new System.Drawing.Point(155, 57);
+            this.cbKhachHang.Location = new System.Drawing.Point(156, 57);
             this.cbKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.cbKhachHang.Name = "cbKhachHang";
             this.cbKhachHang.Size = new System.Drawing.Size(211, 21);
@@ -117,7 +119,7 @@ namespace ProjectPRN292
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 184);
+            this.label1.Location = new System.Drawing.Point(25, 206);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
@@ -126,7 +128,7 @@ namespace ProjectPRN292
             // 
             // nSoLuong
             // 
-            this.nSoLuong.Location = new System.Drawing.Point(155, 219);
+            this.nSoLuong.Location = new System.Drawing.Point(155, 241);
             this.nSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.nSoLuong.Maximum = new decimal(new int[] {
             1000000,
@@ -140,7 +142,7 @@ namespace ProjectPRN292
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 139);
+            this.label9.Location = new System.Drawing.Point(25, 140);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 83;
@@ -148,7 +150,7 @@ namespace ProjectPRN292
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(155, 265);
+            this.txtNote.Location = new System.Drawing.Point(155, 287);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(211, 20);
             this.txtNote.TabIndex = 82;
@@ -156,7 +158,7 @@ namespace ProjectPRN292
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 223);
+            this.label7.Location = new System.Drawing.Point(25, 243);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 81;
@@ -165,7 +167,7 @@ namespace ProjectPRN292
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 267);
+            this.label4.Location = new System.Drawing.Point(25, 290);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 80;
@@ -174,7 +176,7 @@ namespace ProjectPRN292
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 59);
+            this.label3.Location = new System.Drawing.Point(25, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 79;
@@ -183,7 +185,7 @@ namespace ProjectPRN292
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 95);
+            this.label2.Location = new System.Drawing.Point(25, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 78;
@@ -191,7 +193,7 @@ namespace ProjectPRN292
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(211, 350);
+            this.btnCancel.Location = new System.Drawing.Point(211, 372);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 77;
@@ -200,7 +202,7 @@ namespace ProjectPRN292
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(76, 350);
+            this.btnSave.Location = new System.Drawing.Point(76, 372);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 76;
@@ -228,11 +230,31 @@ namespace ProjectPRN292
             this.lbKho.TabIndex = 93;
             this.lbKho.Text = "1";
             // 
+            // txtThuongHieu
+            // 
+            this.txtThuongHieu.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtThuongHieu.Location = new System.Drawing.Point(155, 171);
+            this.txtThuongHieu.Margin = new System.Windows.Forms.Padding(2);
+            this.txtThuongHieu.Name = "txtThuongHieu";
+            this.txtThuongHieu.Size = new System.Drawing.Size(211, 20);
+            this.txtThuongHieu.TabIndex = 95;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 174);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 13);
+            this.label8.TabIndex = 94;
+            this.label8.Text = "Thương Hiệu";
+            // 
             // frmKhoHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 432);
+            this.Controls.Add(this.txtThuongHieu);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lbKho);
             this.Controls.Add(this.txtGiaThue);
             this.Controls.Add(this.txtGiaSP);
@@ -283,5 +305,7 @@ namespace ProjectPRN292
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbKho;
+        private System.Windows.Forms.TextBox txtThuongHieu;
+        private System.Windows.Forms.Label label8;
     }
 }
