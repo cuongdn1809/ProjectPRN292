@@ -18,7 +18,41 @@ namespace ProjectPRN292.DAL
             connection = new SqlConnection(strCon);
             return connection;
         }
+        public List<Sanpham> GetSanPham()
+        {
+            List<Sanpham> sp = new List<Sanpham>();
+            command = new SqlCommand("select * from SanPham", GetConnection());
+            // Sur dung Mo hinh Connected
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        sp.Add(new Sanpham
+                        {
+                            SanPhamID = reader.GetInt32(0),
+                            TenSanPham = reader.GetString(1),
+                            ThuongHieu = reader.GetString(2),
+                            Gia = reader.GetInt32(3),
+                            Note = reader.GetString(4)
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
 
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return sp;
+        }
         public int InsertSanPam(Sanpham sanpham)
         {
             int result = 0;

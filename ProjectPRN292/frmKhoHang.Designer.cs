@@ -88,10 +88,10 @@ namespace ProjectPRN292
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(310, 137);
+            this.button1.Location = new System.Drawing.Point(312, 137);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.Size = new System.Drawing.Size(55, 21);
             this.button1.TabIndex = 88;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
@@ -202,12 +202,13 @@ namespace ProjectPRN292
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(76, 372);
+            this.btnSave.Location = new System.Drawing.Point(80, 372);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 76;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label5
             // 
@@ -216,19 +217,18 @@ namespace ProjectPRN292
             this.label5.Location = new System.Drawing.Point(116, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 26);
+            this.label5.Size = new System.Drawing.Size(0, 26);
             this.label5.TabIndex = 75;
-            this.label5.Text = "Kho Hàng :";
             // 
             // lbKho
             // 
             this.lbKho.AutoSize = true;
             this.lbKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKho.Location = new System.Drawing.Point(252, 10);
+            this.lbKho.Location = new System.Drawing.Point(107, 10);
             this.lbKho.Name = "lbKho";
-            this.lbKho.Size = new System.Drawing.Size(25, 25);
+            this.lbKho.Size = new System.Drawing.Size(115, 25);
             this.lbKho.TabIndex = 93;
-            this.lbKho.Text = "1";
+            this.lbKho.Text = "Kho Hàng";
             // 
             // txtThuongHieu
             // 

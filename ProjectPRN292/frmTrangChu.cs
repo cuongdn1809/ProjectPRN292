@@ -93,12 +93,18 @@ namespace ProjectPRN292
             dgvHome.Columns.Add("tenKhachHangcol", "Tên Khách Hàng");
             dgvHome.Columns["tenKhachHangcol"].DataPropertyName = "TenKhachHang";
 
+            dgvHome.Columns.Add("thuongHieucol", "Thương Hiệu");
+            dgvHome.Columns["thuongHieucol"].DataPropertyName = "ThuongHieu";
+
             dgvHome.Columns.Add("tenSanPhamcol", "Tên Sản Phẩm");
             dgvHome.Columns["tenSanPhamcol"].DataPropertyName = "TenSanPham";
 
             dgvHome.Columns.Add("ngayNhapcol", "Ngày Nhập Kho ");
             dgvHome.Columns["ngayNhapcol"].DataPropertyName = "NgayNhapHang";
 
+            dgvHome.Columns.Add("Giatiencol", "Giá Sản Phẩm");
+            dgvHome.Columns["Giatiencol"].DataPropertyName = "Gia";
+          
             dgvHome.Columns.Add("soLuongcol", "Số Lượng");
             dgvHome.Columns["soLuongcol"].DataPropertyName = "SoLuong";
 
@@ -118,7 +124,7 @@ namespace ProjectPRN292
 
         public void LoadWarehouse()
         {
-            string sql = "select n.NhapHangID, k.TenKhachHang,s.TenSanPham,n.NgayNhapHang, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
+            string sql = "select n.NhapHangID, k.TenKhachHang,s.ThuongHieu,s.TenSanPham,n.NgayNhapHang,s.Gia, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
                 "SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID";
             DataTable dt = Database.ExecuteQuery(sql);
             dgvHome.DataSource = null;
@@ -128,7 +134,7 @@ namespace ProjectPRN292
 
         public void LoadWarehouseByKhachHang(string kh)
         {
-            string sql = "select n.NhapHangID, k.TenKhachHang,s.TenSanPham,n.NgayNhapHang, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
+            string sql = "select n.NhapHangID, k.TenKhachHang,s.ThuongHieu,s.TenSanPham,n.NgayNhapHang,s.Gia, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
                 "SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID and k.TenKhachHang like '%" + kh + "%'";
             DataTable dt = Database.ExecuteQuery(sql);
             dgvHome.DataSource = null;
@@ -138,8 +144,18 @@ namespace ProjectPRN292
 
         public void LoadWarehouseBySanPham(string sp)
         {
-            string sql = "select n.NhapHangID, k.TenKhachHang,s.TenSanPham,n.NgayNhapHang, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
-                "SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID and k.TenKhachHang like '%" + sp+ "%'";
+            string sql = "select n.NhapHangID, k.TenKhachHang,s.ThuongHieu,s.TenSanPham,n.NgayNhapHang,s.Gia, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
+                "SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID and s.TenSanPham like '%" + sp+ "%'";
+            DataTable dt = Database.ExecuteQuery(sql);
+            dgvHome.DataSource = null;
+            dgvHome.DataSource = dt;
+            dgvHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        public void LoadWarehouseByThuongHieu(string th)
+        {
+            string sql = "select n.NhapHangID, k.TenKhachHang,s.ThuongHieu,s.TenSanPham,n.NgayNhapHang,s.Gia, n.SoLuong,n.GiaThue,n.Note from KhachHang k, NhapHang n, " +
+               "SanPham s where k.KhachHangID = n.KhachHangID and n.SanPhamID = s.SanPhamID and s.ThuongHieu like '%" + th + "%'";
             DataTable dt = Database.ExecuteQuery(sql);
             dgvHome.DataSource = null;
             dgvHome.DataSource = dt;
@@ -201,55 +217,81 @@ namespace ProjectPRN292
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cbTimkiem.SelectedIndex == 0)
+
+            switch (cbTimkiem.SelectedIndex)
             {
-                if (txtTim.Text.Length != 0)
-                {    
-                    if (kh.SearchKhachHangByName(txtTim.Text.Trim()).Count > 0)
+                case 0:
+                    if (txtTim.Text.Length != 0)
                     {
-                        dgvHome.DataSource = null;
-                        LoadWarehouseByKhachHang(txtTim.Text.Trim());
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy khách hàng!");
-                    }
+                        if (kh.SearchKhachHangByName(txtTim.Text.Trim()).Count > 0)
+                        {
+                            LoadWarehouseByKhachHang(txtTim.Text.Trim());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy khách hàng!");
+                            LoadWarehouse();
+                            txtTim.Focus();
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Hãy nhập tên khách hàng!");
-                        dgvHome.DataSource = null;
-
                         LoadWarehouse();
                         txtTim.Focus();
                     }
-                }
-                else
-                {
-                    if (txtTim.Text.Length != 0)
-                {
-                        WareHouseDAL home = new WareHouseDAL();
-                    if (home.GetWareHousebyTenSanPham(txtTim.Text.Trim()).Count > 0)
+                    break;
+
+
+                case 1:
+                    
+                        if (txtTim.Text.Length != 0)
                         {
-                            dgvHome.DataSource = null;
-                            LoadWarehouseBySanPham(txtTim.Text.Trim());
+                            WareHouseDAL home = new WareHouseDAL();
+                            if (home.GetWareHousebyTenSanPham(txtTim.Text.Trim()).Count > 0)
+                            {                              
+                                LoadWarehouseBySanPham(txtTim.Text.Trim());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không tìm thấy sản phẩm!");
+                                LoadWarehouse();
+                                txtTim.Focus();
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy sản phẩm!");
+                            MessageBox.Show("Hãy nhập tên sản phẩm!");
+                            LoadWarehouse();
+                            txtTim.Focus();
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hãy nhập tên sản phẩm!");
-                        dgvHome.DataSource = null;
-
-                        LoadWarehouse();
-                        txtTim.Focus();
-                    }
-                }
+                        break;        
+                    case 2:
+                        if (txtTim.Text.Length != 0)
+                        {
+                            WareHouseDAL home = new WareHouseDAL();
+                        if (home.GetWareHousebyTenThuongHieu(txtTim.Text.Trim()).Count > 0)                        
+                            //if (home.GetWareHousebyTenThuongHieu(txtTim.Text.Trim()).Count > 0)
+                            {                                
+                                LoadWarehouseByThuongHieu(txtTim.Text.Trim());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không tìm thấy thương hiệu!");
+                                LoadWarehouse();
+                                txtTim.Focus();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hãy nhập tên thương hiệu!");
+                            LoadWarehouse();
+                            txtTim.Focus();
+                        }             
+                    break;
             }
-        
+        }
+
         private void btnExitt_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn  muốn thoát không ?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -266,13 +308,13 @@ namespace ProjectPRN292
 
                 frmKhoHang.id = int.Parse(dgvHome.CurrentRow.Cells["khocol"].Value.ToString());
                 frmKhoHang.date = Convert.ToDateTime(dgvHome.CurrentRow.Cells["ngayNhapcol"].Value);
-                frmKhoHang.tenKH = dgvHome.CurrentRow.Cells["tenKhachHangcol"].Value.ToString().Trim();
+                frmKhoHang.tenKH = dgvHome.CurrentRow.Cells["tenKhachHangcol"].Value.ToString();
                 frmKhoHang.tenSP = dgvHome.CurrentRow.Cells["tenSanPhamcol"].Value.ToString();
+                //frmKhoHang.tenTH = dgvHome.CurrentRow.Cells["tenThuongHieucol"].Value.ToString();
                 frmKhoHang.GiaThue = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
                 frmKhoHang.soluong = int.Parse(dgvHome.CurrentRow.Cells["soluongcol"].Value.ToString());
-                // frmKhoHang.GiaSP = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
+                frmKhoHang.GiaSP = int.Parse(dgvHome.CurrentRow.Cells["Giatiencol"].Value.ToString());
                 frmKhoHang.Note= dgvHome.CurrentRow.Cells["notecol"].Value.ToString();
-
                 frmKhoHang frm = new frmKhoHang();
                 // Show
                 this.Visible = false;

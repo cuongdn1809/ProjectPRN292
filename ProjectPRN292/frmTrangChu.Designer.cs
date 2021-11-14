@@ -104,7 +104,8 @@ namespace ProjectPRN292
             // 
             this.cbTimkiem.Items.AddRange(new object[] {
             "Tên khách hàng",
-            "Tên Sản Phẩm"});
+            "Tên Sản Phẩm",
+            "Tên Thương Hiệu"});
             this.cbTimkiem.Location = new System.Drawing.Point(6, 21);
             this.cbTimkiem.Name = "cbTimkiem";
             this.cbTimkiem.Size = new System.Drawing.Size(109, 21);
