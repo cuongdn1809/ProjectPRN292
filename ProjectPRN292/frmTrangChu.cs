@@ -310,7 +310,7 @@ namespace ProjectPRN292
                 frmKhoHang.date = Convert.ToDateTime(dgvHome.CurrentRow.Cells["ngayNhapcol"].Value);
                 frmKhoHang.tenKH = dgvHome.CurrentRow.Cells["tenKhachHangcol"].Value.ToString();
                 frmKhoHang.tenSP = dgvHome.CurrentRow.Cells["tenSanPhamcol"].Value.ToString();
-                //frmKhoHang.tenTH = dgvHome.CurrentRow.Cells["tenThuongHieucol"].Value.ToString();
+                frmKhoHang.tenTH = dgvHome.CurrentRow.Cells["tenThuongHieucol"].Value.ToString();
                 frmKhoHang.GiaThue = int.Parse(dgvHome.CurrentRow.Cells["giacol"].Value.ToString());
                 frmKhoHang.soluong = int.Parse(dgvHome.CurrentRow.Cells["soluongcol"].Value.ToString());
                 frmKhoHang.GiaSP = int.Parse(dgvHome.CurrentRow.Cells["Giatiencol"].Value.ToString());

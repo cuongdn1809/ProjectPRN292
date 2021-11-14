@@ -18,7 +18,7 @@ namespace HumanManagement
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTrangChu());
+            Application.Run(new frmSanPham());
         }
     }
 }
