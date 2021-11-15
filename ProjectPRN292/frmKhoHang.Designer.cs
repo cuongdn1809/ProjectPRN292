@@ -49,7 +49,6 @@ namespace ProjectPRN292
             this.lbKho = new System.Windows.Forms.Label();
             this.txtThuongHieu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +91,7 @@ namespace ProjectPRN292
             this.cbSanPham.Location = new System.Drawing.Point(156, 137);
             this.cbSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.cbSanPham.Name = "cbSanPham";
-            this.cbSanPham.Size = new System.Drawing.Size(147, 21);
+            this.cbSanPham.Size = new System.Drawing.Size(210, 21);
             this.cbSanPham.TabIndex = 87;
             // 
             // cbKhachHang
@@ -238,17 +237,6 @@ namespace ProjectPRN292
             this.label8.TabIndex = 94;
             this.label8.Text = "Thương Hiệu";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(312, 137);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 21);
-            this.button1.TabIndex = 88;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmKhoHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,7 +249,6 @@ namespace ProjectPRN292
             this.Controls.Add(this.txtGiaSP);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpNgayNhap);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbSanPham);
             this.Controls.Add(this.cbKhachHang);
             this.Controls.Add(this.label1);
@@ -307,6 +294,5 @@ namespace ProjectPRN292
         private System.Windows.Forms.Label lbKho;
         private System.Windows.Forms.TextBox txtThuongHieu;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
     }
 }

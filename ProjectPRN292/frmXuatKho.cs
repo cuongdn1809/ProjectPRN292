@@ -24,13 +24,13 @@ namespace ProjectPRN292
         {
             InitializeComponent();
             //set value cho nhay nhap kho
-            string a = date.ToString("dd/MM/yyyy");
-            string[] result = a.Split('/');
-            dtpNgayNhapKho.Value = new DateTime(int.Parse(result[2]), int.Parse(result[1]), int.Parse(result[0]));
-
+            //string a = date.ToString("dd/MM/yyyy");
+            //string[] result = a.Split('/');
+            // dtpNgayNhapKho.Value = new DateTime(int.Parse(result[2]), int.Parse(result[1]), int.Parse(result[0]));
+            txtNhapHang.Text = date.ToString("dd/MM/yyyy");
             this.txtKho.Text = id.ToString();
-            this.txtKhachHang.Text = tenKH;
-            dtpNgayXuatHang.Value = DateTime.Now;
+            this.txtKhachHang.Text = tenKH;         
+            txtXuatHang.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.txtGiatheoNgay.Text = GiaThue.ToString();
             this.txtTongGia.Text = tonggiathue(GiaThue).ToString();
         }

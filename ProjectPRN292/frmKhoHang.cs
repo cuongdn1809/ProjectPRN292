@@ -100,15 +100,7 @@ namespace ProjectPRN292
             nSoLuong.Value = soluong;
            
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmSanPham frm = new frmSanPham();
-            // Show
-            this.Visible = false;
-            frm.ShowDialog();
-        }
-      
+         
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
