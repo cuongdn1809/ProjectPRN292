@@ -32,14 +32,14 @@ namespace ProjectPRN292
             }
             else
             {
-                //               var hasPass = new Regex(@"^.*[A-Z].*[#@$!%*?&-]+.*$");
-                //               if (!hasPass.IsMatch(txtPassword.Text))
-                //               {
-                //                   MessageBox.Show("Mật khẩu sai!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //                   txtUsername.Focus();
-                //               }
-                //               else
-                //               {
+                               var hasPass = new Regex(@"^.*[A-Z].*[#@$!%*?&-]+.*$");
+                               if (!hasPass.IsMatch(txtPassword.Text))
+                               {
+                                   MessageBox.Show("Mật khẩu sai!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                   txtUsername.Focus();
+                               }
+                               else
+                               {
                 if (LoginDAL.IsAccountValid(txtUsername.Text.Trim(), txtPassword.Text.Trim()).Count > 0)
                     {
                         DataTable table = LoginDAL.checkAccount(txtUsername.Text, txtPassword.Text);
@@ -53,7 +53,7 @@ namespace ProjectPRN292
                     }
                     else
                         MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
- //               }
+                }
 
                 
             }

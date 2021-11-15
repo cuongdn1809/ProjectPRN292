@@ -50,7 +50,7 @@ namespace ProjectPRN292
         {           
             try { 
 
-             var bill = new HoaDon();            
+                var bill = new HoaDon();            
                 DateTime aDateTime = DateTime.Now;
                 bill.NgayNhapHang = date;
                 bill.NgayXuatHang = aDateTime;
@@ -63,7 +63,7 @@ namespace ProjectPRN292
                 bill.SanPhamId = idsp;
                 listBill.InsertBill(bill);
                 a.DelateWareHouse(id);
-            MessageBox.Show("Xuat kho Thanh cong");
+            MessageBox.Show("Xuất kho thành công");
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ namespace ProjectPRN292.Entity
         private string ngayNhapHang;
         private int khachHangID;
         private int soLuong;
+        private int giaThue;
         private string note;
         private int sanPhamID;
         private int quanLyID;
@@ -19,22 +20,13 @@ namespace ProjectPRN292.Entity
         {
         }
 
-        public DonNhap(int nhapHangId, string ngayNhapHang, int khachHangID, int soLuong, string note, int sanPhamID, int quanLyID)
+        public DonNhap(int nhapHangId, string ngayNhapHang, int khachHangID, int soLuong, int giaThue, string note, int sanPhamID, int quanLyID)
         {
             this.nhapHangId = nhapHangId;
             this.ngayNhapHang = ngayNhapHang;
             this.khachHangID = khachHangID;
             this.soLuong = soLuong;
-            this.note = note;
-            this.sanPhamID = sanPhamID;
-            this.quanLyID = quanLyID;
-        }
-
-        public DonNhap(string ngayNhapHang, int khachHangID, int soLuong, string note, int sanPhamID, int quanLyID)
-        {
-            this.ngayNhapHang = ngayNhapHang;
-            this.khachHangID = khachHangID;
-            this.soLuong = soLuong;
+            this.GiaThue = giaThue;
             this.note = note;
             this.sanPhamID = sanPhamID;
             this.quanLyID = quanLyID;
@@ -47,5 +39,6 @@ namespace ProjectPRN292.Entity
         public string Note { get => note; set => note = value; }
         public int SanPhamID { get => sanPhamID; set => sanPhamID = value; }
         public int QuanLyID { get => quanLyID; set => quanLyID = value; }
+        public int GiaThue { get => giaThue; set => giaThue = value; }
     }
 }

@@ -27,57 +27,11 @@ namespace ProjectPRN292
             kh.ShowDialog();
         }
 
-        private void LoadDataHoaDon()
-        {
-            string sql = "select h.NgayNhapHang, h.NgayXuatHang, h.TongTien, h.HoaDonID, k.TenKhachHang, s.TenSanPham  " +
-                            "from HoaDon h, KhachHang k, SanPham s " +
-                            "where h.KhachHangID = k.KhachHangID and s.SanPhamID = h.SanPhamID";
-            DataTable dt = Database.ExecuteQuery(sql);
-            dgvHome.DataSource = dt;
-        }
-
-        private void SetUpDataTableForHoaDon()
-        {
-            dgvHome.AutoGenerateColumns = false;
-            dgvHome.Columns.Add("ngayNhapHangcol", "Ngày Nhập Hàng");
-            dgvHome.Columns["ngayNhapHangcol"].DataPropertyName = "NgayNhapHang";
-
-            dgvHome.Columns.Add("ngayXuatHangcol", "Ngày Xuất Hàng");
-            dgvHome.Columns["ngayXuatHangcol"].DataPropertyName = "NgayXuatHang";
-
-            dgvHome.Columns.Add("tongTiencol", "Tổng Tiền");
-            dgvHome.Columns["tongTiencol"].DataPropertyName = "TongTien";
-
-            dgvHome.Columns.Add("tenKhachHangcol", "Tên Khách Hàng");
-            dgvHome.Columns["tenKhachHangcol"].DataPropertyName = "TenKhachHang";
-
-            dgvHome.Columns.Add("tenSanPhamcol", "Tên Sản Phẩm");
-            dgvHome.Columns["tenSanPhamcol"].DataPropertyName = "TenSanPham";
-
-            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            button.HeaderText = "Chỉnh sửa";
-            button.Text = "Chỉnh sửa";
-            button.Name = "editbutton";
-            button.UseColumnTextForButtonValue = true;
-            dgvHome.Columns.Add(button);
-        }
-
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-            SetUpDataTableForHoaDon();
-            LoadDataHoaDon();
-        }
-
         private void btnNhapKho_Click(object sender, EventArgs e)
         {
             frmNhapHang f = new frmNhapHang();
             this.Visible = false;
             f.ShowDialog();
-        }
-
-        private void edit_Close(object sender, EventArgs e)
-        {
-            LoadDataHoaDon();
         }
         private void SetUpDataTableForWareHouse()
         {
@@ -328,6 +282,13 @@ namespace ProjectPRN292
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             frmSanPham kh = new frmSanPham();
+            Visible = false;
+            kh.ShowDialog();
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            frmHoaDon kh = new frmHoaDon();
             Visible = false;
             kh.ShowDialog();
         }

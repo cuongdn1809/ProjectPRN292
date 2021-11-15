@@ -1,7 +1,9 @@
-﻿using ProjectPRN292.Entity;
+﻿
+using ProjectPRN292.Entity;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,7 +11,6 @@ using System.Text;
 namespace ProjectPRN292.DAL
 {
     class HoaDonDAL
-
     {
         SqlCommand command;
         SqlConnection connection;
@@ -44,8 +45,33 @@ namespace ProjectPRN292.DAL
             {
                 connection.Close();
             }
-
             return result;
+        }
+
+        public DataTable GetData()
+        {
+            string sql = "select h.NgayNhapHang, h.NgayXuatHang, h.TongTien, h.HoaDonID, k.TenKhachHang, s.TenSanPham, s.ThuongHieu " +
+                        "from HoaDon h, KhachHang k, SanPham s " +
+                        "where h.KhachHangID = k.KhachHangID and s.SanPhamID = h.SanPhamID";
+            SqlCommand cmd = new SqlCommand(sql, GetConnection());
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+
+        public DataTable GetDataByTenKH(string name)
+        {
+            string sql = "select h.NgayNhapHang, h.NgayXuatHang, h.TongTien, h.HoaDonID, k.TenKhachHang, s.TenSanPham, s.ThuongHieu " +
+                        "from HoaDon h, KhachHang k, SanPham s " +
+                        "where h.KhachHangID = k.KhachHangID and s.SanPhamID = h.SanPhamID and k.TenKhachHang = '" + name+"'";
+            SqlCommand cmd = new SqlCommand(sql, GetConnection());
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
         }
     }
 }

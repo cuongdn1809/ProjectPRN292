@@ -1,4 +1,5 @@
 ﻿using ProjectPRN292.DAL;
+using ProjectPRN292.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,93 +9,123 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ProjectPRN292
 {
     public partial class frmNhapHang : Form
     {
+        DonNhapDAL dal = new DonNhapDAL();
+        KhachHangDAL listKhach = new KhachHangDAL();
+        SanPhamDAL listSanPham = new SanPhamDAL();
+        LoginDAL login = new LoginDAL();
         public frmNhapHang()
         {
             InitializeComponent();
+            LoadForm();
+            LoadKhachHang();
+            LoadSanPham();
+            addBinding();
         }
 
-        SqlConnection connection;
-        SqlCommand command;
-        public SqlConnection GetConnection()
+        public void LoadForm()
         {
-            string strCon = ConfigurationManager.ConnectionStrings["PRN292"].ToString();
-            connection = new SqlConnection(strCon);
-            return connection;
+            dtpNgayNhap.Value = DateTime.Now;
+            txtGiaThue.Text = "";
+            txtNote.Text = "";
+            nSoLuong.Value = 0;
+        }
+        public void LoadKhachHang()
+        {
+            cbKhachHang.DataSource = null;
+            cbKhachHang.DataSource = listKhach.GetKhachHang();
+            cbKhachHang.DisplayMember = "TenKhachHang";
+        }
+        public void LoadSanPham()
+        {
+            cbSanPham.DataSource = null;
+            cbSanPham.DataSource = listSanPham.GetSanPham();
+            cbSanPham.DisplayMember = "TenSanPham";
+        }
+        public void addBinding()
+        {
+            txtThuongHieu.DataBindings.Add(new Binding("Text", cbSanPham.DataSource, "ThuongHieu"));
+            txtGiaSP.DataBindings.Add(new Binding("Text", cbSanPham.DataSource, "Gia"));
         }
 
-        public int getIDKhachHang(string tenKhachHang)
+
+        private bool isValid()
         {
-            int KhachHangID = 0;
-            string sql = "select KhachHangID from KhachHang where TenKhachHang = @tenKhachHang";
-            command = new SqlCommand(sql, GetConnection());
-            command.Parameters.AddWithValue("@tenKhachHang", tenKhachHang);
+            bool Boo = true;          
+            string strError = "";
+            Regex regexInt = new Regex(@"^[0-9]+$");
+
+            string gia = nSoLuong.Text;
+            string giaThue = txtGiaThue.Text;
+
+            if (!regexInt.IsMatch(gia))
+            {
+                Boo = false;
+                strError += "Giá tiền phải là số và lớn hơn 0!.\n";
+            }
+            if (!regexInt.IsMatch(giaThue))
+            {
+                Boo = false;
+                strError += "Giá tiền phải là số và lớn hơn 0!.\n";
+            }
+            if (Boo == false)
+                MessageBox.Show(strError);
+            return Boo;
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            DateTime time = dtpNgayNhap.Value;
+            string pattern = "yyyy-MM-dd";
             try
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-                if (reader.HasRows == true)
+                var donNhap = new DonNhap()
                 {
-                    while (reader.Read())
+                    NgayNhapHang = time.ToString(pattern),
+                    KhachHangID = dal.getIDKhachHang(cbKhachHang.Text.Trim()),
+                    SoLuong = Int32.Parse(nSoLuong.Value.ToString()),
+                    GiaThue = Int32.Parse(txtGiaThue.Text),
+                    Note = txtNote.Text,
+                    SanPhamID = dal.getIDSanPham(cbSanPham.Text.Trim()),
+                    QuanLyID = login.getIDQuanLy()
+                };
+                if (isValid())
+                {
+                    if (dal.InsertDonNhap(donNhap) > 0)
                     {
-                        KhachHangID = reader.GetInt32(0);
+                        DialogResult result = MessageBox.Show("Thêm thành công!\nBạn có muốn tiếp tục không?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (result == DialogResult.Cancel)
+                        {
+                            frmTrangChu h = new frmTrangChu();
+                            Visible = false;
+                            h.ShowDialog();
+                        }
+                        else if (result == DialogResult.OK)
+                        {
+                            LoadForm();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại.");
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                connection.Close();
-            }
-            return KhachHangID;
         }
 
-        public int getIDSanPham(string tenSanPham)
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            int SanPhamID = 0;
-            string sql = "select SanPhamID from SanPham where TenSanPham = @tenSanPham";
-            command = new SqlCommand(sql, GetConnection());
-            command.Parameters.AddWithValue("@tenSanPham", tenSanPham);
-            try
-            {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-                if (reader.HasRows == true)
-                {
-                    while (reader.Read())
-                    {
-                        SanPhamID = reader.GetInt32(0);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return SanPhamID;
-        }
-
-
-        private void WareHouseDetail_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you really want to exit?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
                 frmTrangChu h = new frmTrangChu();
@@ -102,76 +133,5 @@ namespace ProjectPRN292
                 h.ShowDialog();
             }
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    if (InsertDonNhap())
-            //    {
-            //        MessageBox.Show("Add successful!");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Add fail!");
-            //    }
-            //    /*MessageBox.Show(donNhap.NgayNhapHang);*/
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error");
-            //}
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmSanPham sp = new frmSanPham();
-            Visible = false;
-            sp.ShowDialog();
-        }
-
-        //    public Boolean InsertDonNhap()
-        //    {
-        //        //bac edit
-        //        LoginDAL login = new LoginDAL();
-        //        string format = "dd/MM/yyyy";
-        //        string NgayNhapHang = dtpNgayNhap.Value.ToString(format);
-        //        int KhachHangID = getIDKhachHang(txtTenKhachHang.Text);
-        //        int SoLuong = Int32.Parse(nSoLuong.Value.ToString());
-        //        string Note = txtNote.Text;
-        //        int SanPhamID = getIDSanPham(txtTenSanPham.Text);
-        //        int QuanLyID = login.getIDQuanLy();
-
-        //        string sql = "INSERT INTO [dbo].[NhapHang]([NgayNhapHang],[KhachHangID],[SoLuong],[Note],[SanPhamID],[QuanLyID]) " +
-        //                                        "VALUES(@ngayNhapHang, @KhachHangID, @soLuong, @note, @SanPhamID, @QuanLyID)";
-        //        command = new SqlCommand(sql, GetConnection());
-        //        SqlParameter param1 = new SqlParameter("@ngayNhapHang", SqlDbType.VarChar);
-        //        param1.Value = NgayNhapHang;
-        //        SqlParameter param2 = new SqlParameter("@KhachHangID", SqlDbType.Int);
-        //        param2.Value = KhachHangID;
-        //        SqlParameter param3 = new SqlParameter("@soLuong", SqlDbType.Int);
-        //        param3.Value = SoLuong;
-        //        SqlParameter param4 = new SqlParameter("@note", SqlDbType.VarChar);
-        //        param4.Value = Note;
-        //        SqlParameter param5 = new SqlParameter("@SanPhamID", SqlDbType.Int);
-        //        param5.Value = SanPhamID;
-        //        SqlParameter param6 = new SqlParameter("@QuanLyID", SqlDbType.Int);
-        //        param6.Value = QuanLyID;
-        //        try
-        //        {
-        //            connection.Open();
-        //            return Database.ExecuteNonQuery(sql, param1, param2, param3, param4, param5, param6) > 0;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new Exception(ex.Message);
-        //        }
-        //        finally
-        //        {
-        //            connection.Close();
-        //        }
-        //        return false;
-        //    }
-
     }
 }
