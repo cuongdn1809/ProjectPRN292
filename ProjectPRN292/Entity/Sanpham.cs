@@ -8,8 +8,8 @@ namespace ProjectPRN292.Entity
     class Sanpham
     {
         private int sanPhamID;
-        private string tenSanPham;
         private string thuongHieu;
+        private string tenSanPham;
         private int gia;
         private string note;
 
@@ -17,18 +17,18 @@ namespace ProjectPRN292.Entity
         {
         }
 
-        public Sanpham(int sanPhamID, string tenSanPham, string thuongHieu, int gia, string note)
+        public Sanpham(int sanPhamID, string thuongHieu, string tenSanPham, int gia, string note)
         {
             this.SanPhamID = sanPhamID;
-            this.TenSanPham = tenSanPham;
             this.ThuongHieu = thuongHieu;
+            this.TenSanPham = tenSanPham;
             this.Gia = gia;
             this.Note = note;
         }
 
-        public int SanPhamID { get => sanPhamID; set => sanPhamID = value; }
-        public string TenSanPham { get => tenSanPham; set => tenSanPham = value; }
+        public int SanPhamID { get => sanPhamID; set => sanPhamID = value; }     
         public string ThuongHieu { get => thuongHieu; set => thuongHieu = value; }
+        public string TenSanPham { get => tenSanPham; set => tenSanPham = value; }
         public int Gia { get => gia; set => gia = value; }
         public string Note { get => note; set => note = value; }
     }

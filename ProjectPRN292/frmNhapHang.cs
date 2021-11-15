@@ -125,7 +125,7 @@ namespace ProjectPRN292
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmAddSanPham sp = new frmAddSanPham();
+            frmSanPham sp = new frmSanPham();
             Visible = false;
             sp.ShowDialog();
         }

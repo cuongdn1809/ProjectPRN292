@@ -41,6 +41,7 @@ namespace ProjectPRN292
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExitt = new System.Windows.Forms.Button();
             this.dgvHome = new System.Windows.Forms.DataGridView();
+            this.btnSanPham = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHome)).BeginInit();
@@ -49,7 +50,7 @@ namespace ProjectPRN292
             // btnHoaDon
             // 
             this.btnHoaDon.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHoaDon.Location = new System.Drawing.Point(253, 19);
+            this.btnHoaDon.Location = new System.Drawing.Point(330, 19);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(75, 23);
             this.btnHoaDon.TabIndex = 13;
@@ -80,7 +81,7 @@ namespace ProjectPRN292
             // 
             // btnKhachHang
             // 
-            this.btnKhachHang.Location = new System.Drawing.Point(172, 19);
+            this.btnKhachHang.Location = new System.Drawing.Point(168, 19);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(75, 23);
             this.btnKhachHang.TabIndex = 10;
@@ -95,9 +96,9 @@ namespace ProjectPRN292
             this.label1.ForeColor = System.Drawing.SystemColors.MenuText;
             this.label1.Location = new System.Drawing.Point(32, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 24);
+            this.label1.Size = new System.Drawing.Size(171, 24);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Phần Mềm Quản Lý Kho";
+            this.label1.Text = "Quản Lý Kho Hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // cbTimkiem
@@ -144,6 +145,7 @@ namespace ProjectPRN292
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.btnSanPham);
             this.groupBox2.Controls.Add(this.btnExitt);
             this.groupBox2.Controls.Add(this.btnHoaDon);
             this.groupBox2.Controls.Add(this.btnNhapKho);
@@ -152,14 +154,14 @@ namespace ProjectPRN292
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(309, 409);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(420, 58);
+            this.groupBox2.Size = new System.Drawing.Size(495, 58);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
             // btnExitt
             // 
             this.btnExitt.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExitt.Location = new System.Drawing.Point(334, 19);
+            this.btnExitt.Location = new System.Drawing.Point(411, 19);
             this.btnExitt.Name = "btnExitt";
             this.btnExitt.Size = new System.Drawing.Size(75, 23);
             this.btnExitt.TabIndex = 14;
@@ -174,9 +176,20 @@ namespace ProjectPRN292
             this.dgvHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHome.Location = new System.Drawing.Point(21, 59);
             this.dgvHome.Name = "dgvHome";
-            this.dgvHome.Size = new System.Drawing.Size(708, 344);
+            this.dgvHome.Size = new System.Drawing.Size(783, 344);
             this.dgvHome.TabIndex = 20;
             this.dgvHome.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHome_CellClick);
+            // 
+            // btnSanPham
+            // 
+            this.btnSanPham.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSanPham.Location = new System.Drawing.Point(249, 19);
+            this.btnSanPham.Name = "btnSanPham";
+            this.btnSanPham.Size = new System.Drawing.Size(75, 23);
+            this.btnSanPham.TabIndex = 15;
+            this.btnSanPham.Text = "Sản Phẩm";
+            this.btnSanPham.UseVisualStyleBackColor = true;
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // frmTrangChu
             // 
@@ -184,7 +197,7 @@ namespace ProjectPRN292
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnHoaDon;
-            this.ClientSize = new System.Drawing.Size(736, 484);
+            this.ClientSize = new System.Drawing.Size(813, 484);
             this.Controls.Add(this.dgvHome);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -216,5 +229,6 @@ namespace ProjectPRN292
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.DataGridView dgvHome;
         private System.Windows.Forms.Button btnExitt;
+        private System.Windows.Forms.Button btnSanPham;
     }
 }

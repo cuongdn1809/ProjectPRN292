@@ -55,6 +55,31 @@ namespace ProjectPRN292
         {
         }
 
+        private bool ValidData()
+        {
+            bool flag = true;
+            // Lấy dữ liệu từ các control trên Form           
+            DateTime NgayNhapHang = dtpNgayNhap.Value;          
+            string Gia = nSoLuong.Text;
+            string strError = "";
+
+            if (NgayNhapHang.CompareTo(DateTime.Now)==1)
+            {
+                flag = false;
+                strError += "Ngày nhập hàng không thể lớn hơn ngày hiện tại.\n";
+                
+            }
+            if (Gia.Equals("") | Gia.Equals("0"))
+            {
+                flag = false;
+                strError += "Giá sản phẩm phải lớn hơn 0.\n";
+            }
+
+            if (flag == false)
+                MessageBox.Show(strError);
+
+            return flag;
+        }
         public void addBinding()
         {
             txtThuongHieu.DataBindings.Add(new Binding("Text", cbSanPham.DataSource, "ThuongHieu"));
@@ -73,12 +98,12 @@ namespace ProjectPRN292
             txtGiaThue.Text = GiaThue.ToString();
             txtNote.Text = Note;
             nSoLuong.Value = soluong;
-            //txtGiaSP.Text = GiaSP.ToString();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmAddSanPham frm = new frmAddSanPham();
+            frmSanPham frm = new frmSanPham();
             // Show
             this.Visible = false;
             frm.ShowDialog();
@@ -96,22 +121,25 @@ namespace ProjectPRN292
                 TenKhachHang = cbKhachHang.GetItemText(cbKhachHang.SelectedItem),
                 TenThuongHieu = txtThuongHieu.Text,
                 TenSanPham = cbSanPham.GetItemText(cbSanPham.SelectedItem),
-                NgayNhapKho = Convert.ToDateTime(dtpNgayNhap.Value.ToString("dd/MM/yyyy")),
+                NgayNhapKho = Convert.ToDateTime(dtpNgayNhap.Value.ToString()),
                 GiaSP = int.Parse(txtGiaSP.Text),
-                Soluong = int.Parse(nSoLuong.Text),
+                Soluong = int.Parse(nSoLuong.Value.ToString()),
                 Giathue = int.Parse(txtGiaThue.Text),
                 Note = txtNote.Text
                 };
-                if (listWareHouse.UpdateWareHouse(khoHang,khID,spID) > 0)
+                if (ValidData())
                 {
-                    MessageBox.Show("Chỉnh sửa thành công.");
-                    frmTrangChu f = new frmTrangChu();
-                    f.ShowDialog();
-                    Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Chỉnh sửa thất bại.");
+                    if (listWareHouse.UpdateWareHouse(khoHang, khID, spID) > 0)
+                    {
+                        MessageBox.Show("Chỉnh sửa thành công.");
+                        frmTrangChu f = new frmTrangChu();
+                        f.ShowDialog();
+                        Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chỉnh sửa thất bại.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -119,7 +147,16 @@ namespace ProjectPRN292
                 MessageBox.Show(ex.Message, "Chương trình lỗi.");
             }
         }
-}} 
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            frmTrangChu frm = new frmTrangChu();
+            // Show
+            this.Visible = false;
+            frm.ShowDialog();
+        }
+    }
+} 
         
     
 

@@ -31,26 +31,27 @@ namespace ProjectPRN292
         {
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nGiaSP = new System.Windows.Forms.NumericUpDown();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtThuongHieu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdSanPham = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtGiaSP = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtThuongHieu = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExitt = new System.Windows.Forms.Button();
-            this.btnNhapKho = new System.Windows.Forms.Button();
-            this.btnXuatKho = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnChinhSua = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbTimkiem = new System.Windows.Forms.ComboBox();
-            this.txtNote = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nGiaSP)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -68,9 +69,11 @@ namespace ProjectPRN292
             this.dgvSanPham.RowTemplate.Height = 24;
             this.dgvSanPham.Size = new System.Drawing.Size(507, 408);
             this.dgvSanPham.TabIndex = 32;
+            this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nGiaSP);
             this.groupBox1.Controls.Add(this.txtNote);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtThuongHieu);
@@ -80,7 +83,6 @@ namespace ProjectPRN292
             this.groupBox1.Controls.Add(this.txtTenSP);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtGiaSP);
             this.groupBox1.Location = new System.Drawing.Point(534, 54);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -88,6 +90,44 @@ namespace ProjectPRN292
             this.groupBox1.Size = new System.Drawing.Size(379, 273);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
+            // 
+            // nGiaSP
+            // 
+            this.nGiaSP.Location = new System.Drawing.Point(122, 169);
+            this.nGiaSP.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nGiaSP.Name = "nGiaSP";
+            this.nGiaSP.Size = new System.Drawing.Size(213, 20);
+            this.nGiaSP.TabIndex = 22;
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(122, 216);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(213, 20);
+            this.txtNote.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 74);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Thương Hiệu";
+            // 
+            // txtThuongHieu
+            // 
+            this.txtThuongHieu.Location = new System.Drawing.Point(122, 74);
+            this.txtThuongHieu.Margin = new System.Windows.Forms.Padding(2);
+            this.txtThuongHieu.Name = "txtThuongHieu";
+            this.txtThuongHieu.Size = new System.Drawing.Size(213, 20);
+            this.txtThuongHieu.TabIndex = 20;
             // 
             // label1
             // 
@@ -146,38 +186,12 @@ namespace ProjectPRN292
             this.label4.TabIndex = 14;
             this.label4.Text = "Ghi Chú";
             // 
-            // txtGiaSP
-            // 
-            this.txtGiaSP.Location = new System.Drawing.Point(122, 174);
-            this.txtGiaSP.Margin = new System.Windows.Forms.Padding(2);
-            this.txtGiaSP.Name = "txtGiaSP";
-            this.txtGiaSP.Size = new System.Drawing.Size(213, 20);
-            this.txtGiaSP.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 74);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Thương Hiệu";
-            // 
-            // txtThuongHieu
-            // 
-            this.txtThuongHieu.Location = new System.Drawing.Point(122, 74);
-            this.txtThuongHieu.Margin = new System.Windows.Forms.Padding(2);
-            this.txtThuongHieu.Name = "txtThuongHieu";
-            this.txtThuongHieu.Size = new System.Drawing.Size(213, 20);
-            this.txtThuongHieu.TabIndex = 20;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.btnExitt);
-            this.groupBox2.Controls.Add(this.btnNhapKho);
-            this.groupBox2.Controls.Add(this.btnXuatKho);
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Controls.Add(this.btnChinhSua);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(534, 396);
             this.groupBox2.Name = "groupBox2";
@@ -194,25 +208,28 @@ namespace ProjectPRN292
             this.btnExitt.TabIndex = 14;
             this.btnExitt.Text = "Trang Chủ";
             this.btnExitt.UseVisualStyleBackColor = true;
+            this.btnExitt.Click += new System.EventHandler(this.btnExitt_Click);
             // 
-            // btnNhapKho
+            // btnAdd
             // 
-            this.btnNhapKho.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNhapKho.Location = new System.Drawing.Point(37, 19);
-            this.btnNhapKho.Name = "btnNhapKho";
-            this.btnNhapKho.Size = new System.Drawing.Size(75, 23);
-            this.btnNhapKho.TabIndex = 11;
-            this.btnNhapKho.Text = "Thêm";
-            this.btnNhapKho.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAdd.Location = new System.Drawing.Point(37, 19);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnNhapKho_Click);
             // 
-            // btnXuatKho
+            // btnChinhSua
             // 
-            this.btnXuatKho.Location = new System.Drawing.Point(162, 19);
-            this.btnXuatKho.Name = "btnXuatKho";
-            this.btnXuatKho.Size = new System.Drawing.Size(75, 23);
-            this.btnXuatKho.TabIndex = 12;
-            this.btnXuatKho.Text = "Chỉnh Sửa";
-            this.btnXuatKho.UseVisualStyleBackColor = true;
+            this.btnChinhSua.Location = new System.Drawing.Point(162, 19);
+            this.btnChinhSua.Name = "btnChinhSua";
+            this.btnChinhSua.Size = new System.Drawing.Size(75, 23);
+            this.btnChinhSua.TabIndex = 12;
+            this.btnChinhSua.Text = "Chỉnh Sửa";
+            this.btnChinhSua.UseVisualStyleBackColor = true;
+            this.btnChinhSua.Click += new System.EventHandler(this.btnXuatKho_Click);
             // 
             // groupBox3
             // 
@@ -247,20 +264,12 @@ namespace ProjectPRN292
             // cbTimkiem
             // 
             this.cbTimkiem.Items.AddRange(new object[] {
-            "Tên Sản Phẩm",
-            "Tên Thương Hiệu"});
+            "Tên Thương Hiệu",
+            "Tên Sản Phẩm"});
             this.cbTimkiem.Location = new System.Drawing.Point(7, 21);
             this.cbTimkiem.Name = "cbTimkiem";
             this.cbTimkiem.Size = new System.Drawing.Size(146, 21);
             this.cbTimkiem.TabIndex = 16;
-            // 
-            // txtNote
-            // 
-            this.txtNote.Location = new System.Drawing.Point(122, 216);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(213, 20);
-            this.txtNote.TabIndex = 21;
             // 
             // frmSanPham
             // 
@@ -277,6 +286,7 @@ namespace ProjectPRN292
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nGiaSP)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -293,17 +303,17 @@ namespace ProjectPRN292
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtGiaSP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtThuongHieu;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnExitt;
-        private System.Windows.Forms.Button btnNhapKho;
-        private System.Windows.Forms.Button btnXuatKho;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnChinhSua;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbTimkiem;
         private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.NumericUpDown nGiaSP;
     }
 }
