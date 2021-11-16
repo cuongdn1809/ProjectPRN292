@@ -1,4 +1,5 @@
 ﻿using ProjectPRN292.DAL;
+using ProjectPRN292.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,19 +21,40 @@ namespace ProjectPRN292
             SetUpDataTable();
             LoadData();
             LoadKhachHang();
+            LoadCbbThang();
+            LoadCbbNam();
         }
 
         private void LoadData()
         {
             DataTable dt = dal.GetData();
             dgvHoaDon.DataSource = dt;
-
+            label4.Text = "";
+        }
+        private void LoadCbbThang()
+        {
+            var list = new List<string>();
+            for (int i = 1; i <= 12; i++)
+            {
+                list.Add("Tháng "+i);
+            }
+            cbbThang.DataSource = list;
+        }
+        private void LoadCbbNam()
+        {
+            var list = new List<string>();
+            for (int i = 2015; i <= 2021; i++)
+            {
+                list.Add("Năm " + i);
+            }
+            cbbNam.DataSource = list;
         }
         public void LoadKhachHang()
         {
             cbbKhachHang.DataSource = null;
-            cbbKhachHang.DataSource = listKhach.GetKhachHang();
-            cbbKhachHang.DisplayMember = "TenKhachHang";
+            List<string> list = listKhach.GetKhachHangByName();
+            list.Insert(0, "---Tất cả---");
+            cbbKhachHang.DataSource = list;
         }
         private void SetUpDataTable()
         {
@@ -85,9 +107,65 @@ namespace ProjectPRN292
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (cbbKhachHang.Text.Equals("---Tất cả---"))
+            {
+                DataTable dt = dal.GetData();
+                dgvHoaDon.DataSource = dt;
+            }
+            else
+            {
+                string name = cbbKhachHang.Text;
+                DataTable dt = dal.GetDataByTenKH(name);
+                dgvHoaDon.DataSource = dt;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string thangStr = cbbThang.Text;
+            int thang = Int32.Parse(thangStr.Substring(5));
+            int nam = Int32.Parse(cbbNam.Text.Substring(3));
             string name = cbbKhachHang.Text;
-            DataTable dt = dal.GetDataByTenKH(name);
-            dgvHoaDon.DataSource = dt;
+            if (cbbKhachHang.Text.Equals("---Tất cả---"))
+            {
+                DataTable dt = dal.GetDataByNgay(thang,nam);
+                dgvHoaDon.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = dal.GetDataByNgayAndTen(name, thang, nam);
+                dgvHoaDon.DataSource = dt;
+            }
+        }
+
+        private int Sum()
+        {
+            int doanhThu = 0;
+            int s = dgvHoaDon.Rows.Count;
+            for(int i =0; i < s; i++)
+            {
+                doanhThu += Int32.Parse(dgvHoaDon.Rows[i].Cells["tongTiencol"].Value.ToString());
+            }
+            return doanhThu;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int sum = Sum();
+            string thang = cbbThang.Text;
+            string nam = cbbNam.Text;
+            label4.Text = "Doanh thu là " + sum +" đồng"; 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                frmTrangChu h = new frmTrangChu();
+                Visible = false;
+                h.ShowDialog();
+            }
         }
     }
 }

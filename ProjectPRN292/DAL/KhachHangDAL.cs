@@ -53,6 +53,35 @@ namespace ProjectPRN292.DAL
             }
             return khachhang;
         }
+
+        public List<string> GetKhachHangByName()
+        {
+            var list = new List<string>();
+            command = new SqlCommand("select TenKhachHang from KhachHang", GetConnection());
+            // Sur dung Mo hinh Connected
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(reader.GetString(0));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return list;
+        }
         /*        public List<KhachHang> GetKhachHang()
                 {
                     List<KhachHang> c = new List<KhachHang>();

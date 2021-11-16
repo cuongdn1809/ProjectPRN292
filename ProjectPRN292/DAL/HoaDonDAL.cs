@@ -73,6 +73,61 @@ namespace ProjectPRN292.DAL
             da.Fill(ds);
             return ds.Tables[0];
         }
+
+        public DataTable GetDataByNgay(int month, int year)
+        {
+            string sql = "select h.NgayNhapHang, h.NgayXuatHang, h.TongTien, h.HoaDonID, k.TenKhachHang, s.TenSanPham, s.ThuongHieu "
+                            +"from HoaDon h, KhachHang k, SanPham s "
+                            + "where h.KhachHangID = k.KhachHangID and s.SanPhamID = h.SanPhamID and MONTH(h.NgayXuatHang)= " + month+ " and Year(h.NgayXuatHang)= " + year;
+            SqlCommand cmd = new SqlCommand(sql, GetConnection());
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+
+        public DataTable GetDataByNgayAndTen(string name, int month, int year)
+        {
+            string sql = "select h.NgayNhapHang, h.NgayXuatHang, h.TongTien, h.HoaDonID, k.TenKhachHang, s.TenSanPham, s.ThuongHieu "
+                            + "from HoaDon h, KhachHang k, SanPham s "
+                            + "where h.KhachHangID = k.KhachHangID and s.SanPhamID = h.SanPhamID and k.TenKhachHang='"+name+ "' and MONTH(h.NgayXuatHang)= " + month + " and Year(h.NgayXuatHang)= " + year;
+            SqlCommand cmd = new SqlCommand(sql, GetConnection());
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+
+        /*public int getNgayInThang( int month, int year)
+        {
+            int KhachHangID = 0;
+            string sql = "select KhachHangID from KhachHang where TenKhachHang = @tenKhachHang";
+            command = new SqlCommand(sql, GetConnection());
+            command.Parameters.AddWithValue("@tenKhachHang", tenKhachHang);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                if (reader.HasRows == true)
+                {
+                    while (reader.Read())
+                    {
+                        KhachHangID = reader.GetInt32(0);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return KhachHangID;
+        }*/
     }
 }
 
